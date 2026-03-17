@@ -15,7 +15,7 @@
             position: relative;
         }
 
-        /* ANIMAÇÃO CHROMA */
+        /* ANIMAÇÃO CHROMA (RGB) */
         @keyframes chroma {
             0% { color: #39FF14; text-shadow: 0 0 10px #39FF14; }
             50% { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
@@ -57,7 +57,6 @@
         .btn-main:hover { background: #39FF14; }
         .btn-nav { background: none; border: 1px solid #444; color: #888; padding: 8px 15px; cursor: pointer; font-family: 'Orbitron'; font-size: 0.7rem; }
 
-        /* ESTADOS ATIVOS */
         .active-hub { opacity: 1 !important; pointer-events: auto !important; z-index: 100 !important; }
         .active-profile { transform: translateX(0) !important; z-index: 200 !important; }
     </style>
@@ -84,11 +83,16 @@
         <div class="grid">
             <div class="card"><h3>SNAKE</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./snake.html'">LAUNCH</button></div>
             <div class="card"><h3>DRIFT</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./carro.html'">LAUNCH</button></div>
-            <div class="card"><h3>MEME</h3><button class="btn-nav" style="width:100%; margin-top:10px;" onclick="window.location.href='./meme.html'">LAUNCH</button></div>
             
-            <div class="card" style="border: 2px solid; animation: chroma 3s infinite linear; background: rgba(0,0,0,0.5);">
+            <div class="card" style="border: 1px solid #00d4ff; background: rgba(0, 212, 255, 0.05);">
+                <h3 style="color:#00d4ff; font-size:0.8rem;">LP_SAMPLES</h3>
+                <button class="btn-nav" style="width:100%; margin-top:10px; border-color:#39FF14; color:#39FF14;" onclick="window.location.href='./exemplo1.html'">DARK_NEON</button>
+                <button class="btn-nav" style="width:100%; margin-top:5px; border-color:#007bff; color:#007bff;" onclick="window.location.href='./exemplo2.html'">BUSINESS_CLEAN</button>
+            </div>
+            
+            <div class="card" style="border: 2px solid; animation: chroma 3s infinite linear;">
                 <h3 style="font-size:0.8rem;">SITE_PROPRIO</h3>
-                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/SEUNUMERO'">SOLICITAR_SITE</button>
+                <button class="btn-main" style="font-size:0.6rem; padding:10px; margin-top:10px;" onclick="window.location.href='https://wa.me/5569992636349?text=Olá+Guilherme,+vi+seu+portfolio+e+gostaria+de+um+orçamento+para+um+site.'">HIRE_NOW</button>
             </div>
         </div>
     </div>
@@ -104,46 +108,23 @@
             <p style="color:#00d4ff; font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 25px;">[ Conhecido por Kovaliosky Dev ]</p>
             
             <div style="margin-bottom: 25px;">
-                <span class="skill-tag">Design_Gráfico_Pro</span>
+                <span class="skill-tag">Design_Gráfico</span>
                 <span class="skill-tag">UI/UX_Strategy</span>
-                <span class="skill-tag">Brand_Identity</span>
                 <span class="skill-tag">Web_Systems</span>
-                <span class="skill-tag">Frontend_Logic</span>
             </div>
 
-            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 15px; border-bottom: 1px solid #222; padding-bottom: 5px;">PROFESSIONAL_EXPERIENCE:</h3>
-            
-            <div style="margin-bottom: 20px;">
-                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> Lead Visual Designer | Creative Solutions</p>
-                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
-                    Especialista em identidades visuais de alta performance. Desenvolvo projetos desde o logotipo minimalista até interfaces exclusivas para sistemas web e jogos 2D.
-                </p>
-            </div>
+            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 10px;">CONTACT_INFO:</h3>
+            <p style="color:#39FF14; font-size:0.75rem; margin-bottom:5px;">> EMAIL: VisualStudio@gmail.com</p>
+            <p style="color:#39FF14; font-size:0.75rem; margin-bottom:20px;">> TEL: (69) 99263-6349</p>
 
-            <div style="margin-bottom: 20px;">
-                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> UI/UX & Web Prototyping</p>
-                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
-                    Foco total na experiência do usuário. Crio wireframes e protótipos de alta fidelidade que garantem sites funcionais, rápidos e intuitivos para o cliente final.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 20px;">
-                <p style="color: #39FF14; font-size: 0.8rem; font-weight: bold;">> Social Media & Marketing Visual</p>
-                <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-left: 10px;">
-                    Criação de criativos estratégicos para anúncios e redes sociais com estética moderna (Neon/Cyberpunk), focando em converter visualizações em autoridade de marca.
-                </p>
-            </div>
-
-            <div style="background: rgba(0, 212, 255, 0.05); padding: 15px; border-radius: 5px; margin-top: 10px;">
-                <p style="color: #00d4ff; font-size: 0.75rem; font-weight: bold;">DIFERENCIAL TECH:</p>
-                <p style="color: #ccc; font-size: 0.7rem; margin-top: 5px;">
-                    Diferente de designers convencionais, domino a lógica do código. Isso permite criar artes otimizadas, leves e perfeitamente implementáveis em qualquer plataforma web.
-                </p>
-            </div>
+            <h3 style="font-size: 0.9rem; color: #fff; margin-bottom: 10px; border-bottom: 1px solid #222;">EXPERIENCE:</h3>
+            <p style="color: #888; font-size: 0.75rem; line-height: 1.5; margin-bottom:15px;">
+                Especialista em identidades visuais de alta performance e Landing Pages que convertem. Especialista em unir a estética Cyberpunk com a lógica de programação.
+            </p>
 
             <div style="margin-top: 30px; display: flex; gap: 10px;">
-                <button class="btn-main" style="width:auto; padding: 12px 25px; font-size: 0.7rem;" onclick="window.location.href='https://wa.me/SEUNUMERO'">CONTRATAR_PROJETO</button>
-                <button class="btn-nav" style="font-size: 0.7rem;" onclick="window.location.href='mailto:SEUEMAIL@GMAIL.COM'">EMAIL</button>
+                <button class="btn-main" style="width:auto; padding: 12px 25px; font-size: 0.7rem;" onclick="window.location.href='https://wa.me/5569992636349?text=Olá+Guilherme,+gostaria+de+conversar+sobre+um+projeto.'">WHATSAPP_LINK</button>
+                <button class="btn-nav" style="font-size: 0.7rem;" onclick="window.location.href='mailto:VisualStudio@gmail.com'">SEND_EMAIL</button>
             </div>
         </div>
     </div>
