@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kovaliosky | Vanguard Hub</title>
+    <title>Kovaliosky | Senior Engineer & Cyber Security</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;700&display=swap');
         
@@ -14,87 +14,102 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
         }
 
-        /* TELA DE ENTRADA */
-        #splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: #39FF14; transition: 0.5s; }
+        /* SPLASH SCREEN */
+        #splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: #39FF14; }
 
-        /* HUB PRINCIPAL */
-        #hub-screen { display: none; width: 100%; max-width: 950px; flex-direction: column; align-items: center; justify-content: center; z-index: 10; }
-        .chroma { color: #39FF14; text-shadow: 0 0 15px #39FF14; margin-bottom: 30px; letter-spacing: 5px; font-size: 1.5rem; text-align: center; }
+        /* HUB CONTENT */
+        #hub-screen { display: none; width: 100%; max-width: 1000px; flex-direction: column; align-items: center; justify-content: center; z-index: 10; padding: 20px; }
+        .chroma { color: #39FF14; text-shadow: 0 0 15px #39FF14; margin-bottom: 25px; letter-spacing: 5px; font-size: 1.4rem; text-align: center; }
 
-        /* GRID DE CARDS */
-        .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; width: 95%; }
-        .card { background: #050505; border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; text-align: center; transition: 0.3s; }
+        /* GRID PRINCIPAL */
+        .grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 20px; width: 100%; }
+        .card { background: #050505; border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; transition: 0.4s; }
         
-        /* CORES DO STATUS */
+        /* STATUS COLORS */
         .status-red { color: #ff3131; border-color: #ff3131 !important; }
         .status-green { color: #39FF14; border-color: #39FF14 !important; text-shadow: 0 0 10px #39FF14; }
 
-        /* BOTÕES DE SOLUÇÕES (GRID INTERNA) */
-        .solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        
+        /* TEXTOS */
+        .label { font-family: 'JetBrains Mono'; font-size: 0.5rem; color: #444; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .main-text { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #888; line-height: 1.5; margin-bottom: 15px; }
+
+        /* BOTÕES DE SOLUÇÕES */
+        .sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         button { 
-            background: none; border: 1px solid #333; color: #888; padding: 10px; 
-            width: 100%; cursor: pointer; font-family: 'Orbitron'; font-size: 0.55rem; 
+            background: none; border: 1px solid #333; color: #666; padding: 10px; 
+            width: 100%; cursor: pointer; font-family: 'Orbitron'; font-size: 0.5rem; 
             transition: 0.3s; text-transform: uppercase; 
         }
-        button:hover { border-color: #fff; color: #fff; }
+        button:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.05); }
+        .btn-active { border-color: #28a745; color: #28a745; }
 
-        .btn-green { border-color: #28a745; color: #28a745; }
-        .btn-green:hover { border-color: #39FF14; color: #39FF14; }
+        /* WHATSAPP ACTION */
+        .contact-btn { background: #39FF14; color: #000; font-weight: bold; margin-top: 30px; width: 320px; border: none; padding: 15px; font-size: 0.75rem; letter-spacing: 2px; }
+        .contact-btn:hover { background: #fff; box-shadow: 0 0 25px #39FF14; cursor: pointer; }
 
-        /* BOTÃO PRINCIPAL */
-        .contact-btn { background: #39FF14; color: #000; font-weight: bold; margin-top: 35px; width: 300px; border: none; padding: 15px; font-size: 0.8rem; }
-        .contact-btn:hover { background: #fff; box-shadow: 0 0 20px #39FF14; }
+        /* FOOTER NAV */
+        .footer-nav { position: absolute; bottom: 20px; display: flex; gap: 30px; font-size: 0.6rem; color: #222; }
+        .footer-nav span { cursor: pointer; transition: 0.3s; }
+        .footer-nav span:hover { color: #39FF14; }
 
-        /* FOOTER */
-        .footer-nav { position: absolute; bottom: 25px; display: flex; gap: 40px; font-size: 0.6rem; color: #222; letter-spacing: 2px; }
-        .footer-nav span:hover { color: #444; cursor: pointer; }
-
-        /* MODAL */
+        /* MODAIS */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; justify-content: center; align-items: center; }
-        .modal-content { background: #0a0a0a; border: 1px solid #39FF14; padding: 40px; max-width: 500px; border-radius: 10px; text-align: left; }
+        .modal-content { background: #070707; border: 1px solid #39FF14; padding: 40px; max-width: 600px; border-radius: 10px; position: relative; }
+        .close { position: absolute; top: 15px; right: 20px; color: #ff3131; cursor: pointer; font-size: 0.6rem; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
     <div id="splash" onclick="unlock()">
-        <p style="font-family: 'JetBrains Mono';">> INITIALIZING_VANGUARD_HUB...</p>
-        <p style="font-size: 0.5rem; color: #333; margin-top: 15px;">[ CLICK TO ENTER ]</p>
+        <p style="font-family: 'JetBrains Mono';">> INITIALIZING_VANGUARD_OS...</p>
+        <p style="font-size: 0.5rem; color: #222; margin-top: 15px;">[ AUTH_REQUIRED: CLICK_TO_DECRYPT ]</p>
     </div>
 
     <div id="hub-screen">
         <h1 class="chroma">VANGUARD_CORE_HUB</h1>
         
         <div class="grid">
-            <div id="card-scan" class="card status-red">
-                <h3 id="scan-title" style="font-size:0.7rem; margin-bottom: 15px;">SECURITY_SHIELD</h3>
-                <div id="status-text" style="margin-bottom:20px; font-size:0.55rem; font-family:'JetBrains Mono'; min-height:30px;">> SYSTEM_IDLE...</div>
-                <button id="btn-action" class="status-red" onclick="runScan()">RUN_SCAN</button>
+            <div id="card-sec" class="card status-red">
+                <span class="label">Cybersecurity_Module</span>
+                <h3 id="sec-title" style="font-size:0.7rem; margin-bottom:10px; color:#ff3131;">SECURITY_SHIELD</h3>
+                <p id="sec-desc" class="main-text">> STATUS: UNPROTECTED<br>> THREATS: DETECTED</p>
+                <button id="sec-btn" class="status-red" onclick="runScan()">RUN_SECURITY_DEPLOY</button>
+                
+                <hr style="border:0; border-top:1px solid #1a1a1a; margin: 20px 0;">
+                
+                <span class="label">Lead_Engineer</span>
+                <p class="main-text" style="color:#fff; font-size:0.55rem;">GUILHERME KOVALIOSKY<br>Senior Dev | Cyber Specialist</p>
             </div>
 
             <div class="card" style="border-color: #333;">
-                <h3 style="color:#fff; font-size:0.7rem; margin-bottom: 15px;">DEPLOYED_SOLUTIONS</h3>
-                <div class="solutions-grid">
-                    <button onclick="location.href='exemplo1.html'">NEON_STYLE</button>
-                    <button onclick="location.href='exemplo2.html'">CLEAN_UI</button>
-                    <button onclick="location.href='exemplo3.html'">APPLE_CORE</button>
-                    <button onclick="location.href='exemplo4.html'">CRYPTO_DASH</button>
-                    <button onclick="location.href='exemplo5.html'">AGENCY_WEB</button>
-                    <button class="btn-green" onclick="location.href='exemplo6.html'">PAYMENT_GATE</button>
+                <span class="label">Strategic_Deployments</span>
+                <h3 style="font-size:0.7rem; margin-bottom:15px; color:#fff;">ACTIVE_SOLUTIONS_V1</h3>
+                <div class="sol-grid">
+                    <button onclick="location.href='exemplo1.html'">Neon_Noir</button>
+                    <button onclick="location.href='exemplo2.html'">Clean_UX</button>
+                    <button onclick="location.href='exemplo3.html'">Apple_Core</button>
+                    <button onclick="location.href='exemplo4.html'">Crypto_Dash</button>
+                    <button onclick="location.href='exemplo5.html'">Agency_Web</button>
+                    <button class="btn-active" onclick="location.href='exemplo6.html'">Payment_Gate</button>
                 </div>
+                <hr style="border:0; border-top:1px solid #1a1a1a; margin: 20px 0;">
+                <span class="label">Professional_Brief</span>
+                <p class="main-text" style="font-size:0.55rem;">Especialista em criar infraestruturas blindadas com design estratégico. Foco em interfaces de alta performance e defesa cibernética ativa.</p>
             </div>
         </div>
 
-        <button class="contact-btn" onclick="location.href='https://wa.me/5569992636349'">INICIAR PROJETO</button>
+        <button class="contact-btn" onclick="location.href='https://wa.me/5569992636349'">CONTRATAR ESPECIALISTA</button>
 
         <div class="footer-nav">
             <span onclick="openModal('sobre')">SOBRE NÓS</span>
             <span onclick="openModal('faq')">F.A.Q</span>
+            <span onclick="openModal('curriculo')">DETALHES TÉCNICOS</span>
         </div>
     </div>
 
     <div id="modal" class="modal" onclick="this.style.display='none'">
         <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="this.parentElement.parentElement.style.display='none'">[ CLOSE_TERMINAL ]</span>
             <div id="modal-text" style="font-family:'JetBrains Mono'; font-size:0.7rem; color:#888; line-height:1.6;"></div>
         </div>
     </div>
@@ -104,27 +119,31 @@
             document.getElementById('splash').style.display = 'none';
             document.getElementById('hub-screen').style.display = 'flex';
         }
-        setTimeout(unlock, 3500);
+        setTimeout(unlock, 4000);
 
         function runScan() {
-            const card = document.getElementById('card-scan');
-            const title = document.getElementById('scan-title');
-            const text = document.getElementById('status-text');
-            const btn = document.getElementById('btn-action');
-            text.innerHTML = "> SCANNING_CORE...";
+            const card = document.getElementById('card-sec');
+            const title = document.getElementById('sec-title');
+            const desc = document.getElementById('sec-desc');
+            const btn = document.getElementById('sec-btn');
+            
+            desc.innerHTML = "> INITIATING_DEFENSE_PROTOCOLS...<br>> ENCRYPTING_RESOURCES...";
+            
             setTimeout(() => {
                 card.classList.replace('status-red', 'status-green');
-                title.classList.add('status-green');
-                text.classList.add('status-green');
+                title.style.color = "#39FF14";
+                desc.style.color = "#39FF14";
+                desc.innerHTML = "> SHIELD_ACTIVE_100%<br>> SYSTEM_SECURE_BY_VANGUARD";
                 btn.classList.replace('status-red', 'status-green');
-                text.innerHTML = "> SCAN_COMPLETE<br>> 100%_SECURE";
-                btn.innerHTML = "PROTECTED";
-            }, 1500);
+                btn.innerHTML = "SYSTEM_PROTECTED";
+                btn.onclick = null;
+            }, 2000);
         }
 
         const info = {
-            sobre: "<h3 style='color:#39FF14'>VANGUARDS VISUAL</h3><br>Célula de engenharia liderada por Kovaliosky. Especialistas em interfaces de alta performance e blindagem digital.",
-            faq: "<h3 style='color:#39FF14'>SISTEMA_INTEL</h3><br><b>SEGURANÇA:</b> Proteção nativa contra inspeção.<br><b>PAGAMENTOS:</b> Suporte a Pix e Cripto ativos."
+            sobre: "<h3 style='color:#39FF14; margin-bottom:15px;'>VANGUARDS VISUAL CORE</h3>Engenharia de software liderada por Guilherme Kovaliosky. Nossa missão é unir a estética do futuro com a segurança do presente. Desenvolvemos interfaces que não apenas atraem, mas protegem ativos digitais contra engenharia reversa.",
+            faq: "<h3 style='color:#39FF14; margin-bottom:15px;'>COMMON_INTEL</h3><b>> SEGURANÇA:</b> Proteção nativa contra F12 e DevTools.<br><b>> PAGAMENTOS:</b> Integração total com gateways Pix/Cripto.<br><b>> PRAZOS:</b> Desenvolvimento ágil entre 7 e 20 dias.",
+            curriculo: "<h3 style='color:#39FF14; margin-bottom:15px;'>TECHNICAL_PROFILE</h3><b>ESPECIALISTA SÊNIOR:</b> Domínio em JavaScript, Segurança Ofuscada e UI Futurista.<br><br><b>DESTAQUES:</b><br>- Criação de Gateways Blindados.<br>- Arquitetura de Micro-serviços Front-end.<br>- Design UX focado em conversão de alto valor."
         };
 
         function openModal(key) {
