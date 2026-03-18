@@ -20,6 +20,7 @@
             background: #000; color: #39FF14; display: flex; flex-direction: column;
             align-items: center; justify-content: center; z-index: 10000;
             font-family: 'JetBrains Mono', monospace; transition: opacity 0.8s ease-out;
+            pointer-events: none; /* Garante que não bloqueie cliques se bugar */
         }
 
         @keyframes typing { from { width: 0; } to { width: 100%; } }
@@ -52,4 +53,33 @@
 
     <div id="splash-screen">
         <p class="typewriter">> INITIALIZING_SECURE_VANGUARD_BOOT...</p>
-        <p style="font-size: 0.6rem; color: #666; margin-top: 10px;">AUTH: KOVALIOSKY_DEV // ENCRYPTION
+        <p style="font-size: 0.6rem; color: #666; margin-top: 10px;">AUTH: KOVALIOSKY_DEV // ENCRYPTION: AES-256</p>
+    </div>
+
+    <div id="login-screen" class="screen">
+        <h1 class="chroma" id="login-title">SYSTEM ACCESS</h1>
+        <input type="password" id="passInput" placeholder="PASSWORD">
+        <button type="button" class="btn-main" onclick="unlock()">DECRYPT & ENTER</button>
+    </div>
+
+    <div id="hub-screen" class="screen">
+        <h2 class="chroma" id="hub-title">VANGUARD_CORE_HUB</h2>
+        
+        <div class="grid">
+            <div class="card" style="border-color: #ff3131; background: rgba(255, 49, 49, 0.02);">
+                <h3 style="color:#ff3131; font-size:0.7rem; margin-bottom: 10px;">SECURITY_SHIELD</h3>
+                <div id="security-status" style="font-family:'JetBrains Mono'; font-size:0.55rem; color:#ff3131; text-align:left; margin:10px 0; height:65px; line-height: 1.4; border-left: 2px solid #ff3131; padding-left: 8px;">
+                    > SYSTEM_IDLE<br>
+                    > WAITING_COMMAND...
+                </div>
+                <button type="button" class="btn-nav" style="border-color:#ff3131; color:#ff3131;" onclick="runSecurityScan()">RUN_SECURE_SCAN</button>
+            </div>
+            
+            <div class="card" style="border-color: #00d4ff;">
+                <h3 style="color:#00d4ff; font-size:0.7rem; margin-bottom: 10px;">BUSINESS_SOLUTIONS</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+                    <button class="btn-nav" style="margin:0;" onclick="window.location.href='exemplo1.html'">NEON</button>
+                    <button class="btn-nav" style="margin:0;" onclick="window.location.href='exemplo2.html'">CLEAN</button>
+                    <button class="btn-nav" style="margin:0;" onclick="window.location.href='exemplo3.html'">APPLE</button>
+                    <button class="btn-nav" style="margin:0;" onclick="window.location.href='exemplo4.html'">CRYPTO</button>
+                    <button class="btn-nav" style="margin:0;"
