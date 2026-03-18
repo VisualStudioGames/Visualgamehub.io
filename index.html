@@ -8,6 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;700&display=swap');
         
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        
         body { 
             background: #000; color: #fff; font-family: 'Orbitron', sans-serif; 
             overflow: hidden; height: 100vh; width: 100vw; 
@@ -15,28 +16,49 @@
         }
 
         #hub-screen { display: flex; width: 100%; max-width: 1000px; flex-direction: column; align-items: center; z-index: 10; padding: 20px; }
-        .chroma { color: #39FF14; text-shadow: 0 0 15px #39FF14; margin-bottom: 30px; letter-spacing: 5px; font-size: 1.4rem; text-align: center; }
+        
+        .chroma { 
+            color: #39FF14; text-shadow: 0 0 15px #39FF14; 
+            margin-bottom: 30px; letter-spacing: 5px; font-size: 1.4rem; text-align: center; 
+        }
 
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
-        .card { background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; text-align: left; }
-        .status-green { border-color: #39FF14 !important; box-shadow: 0 0 15px rgba(57, 255, 20, 0.1); }
+        
+        .card { 
+            background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; 
+            padding: 25px; border-radius: 15px; text-align: left; 
+        }
+        
+        .status-green { 
+            border-color: #39FF14 !important; 
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.1); 
+        }
 
         .label { font-family: 'JetBrains Mono'; font-size: 0.5rem; color: #444; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .main-text { font-family: 'JetBrains Mono'; font-size: 0.6rem; color: #888; line-height: 1.4; margin-bottom: 15px; }
-
+        
         .sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        
         button { 
-            background: none; border: 1px solid #333; color: #fff; padding: 10px; 
-            width: 100%; cursor: pointer; font-family: 'Orbitron'; font-size: 0.5rem; 
+            background: none; border: 1px solid #333; color: #fff; 
+            padding: 10px; width: 100%; cursor: pointer; 
+            font-family: 'Orbitron'; font-size: 0.5rem; 
             transition: 0.3s; text-transform: uppercase; 
         }
+        
         button:hover { border-color: #39FF14; color: #39FF14; background: rgba(57, 255, 20, 0.05); }
 
-        .main-btn { background: #39FF14; color: #000; font-weight: bold; margin-top: 40px; width: 350px; border: none; padding: 18px; font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; }
+        .main-btn { 
+            background: #39FF14; color: #000; font-weight: bold; 
+            margin-top: 40px; width: 350px; border: none; padding: 18px; 
+            font-size: 0.8rem; letter-spacing: 2px; cursor: pointer;
+        }
+        
         .main-btn:hover { background: #fff; box-shadow: 0 0 25px #39FF14; }
+
+        .footer-nav { margin-top: 30px; display: flex; gap: 20px; font-size: 0.6rem; color: #222; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <div id="hub-screen">
         <h1 class="chroma">VANGUARD_CORE_HUB</h1>
@@ -45,7 +67,9 @@
             <div class="card status-green">
                 <span class="label">Cybersecurity_Module</span>
                 <h3 style="color:#39FF14; font-size:0.7rem; margin-bottom:10px;">SECURITY_SHIELD</h3>
-                <p style="color:#39FF14; font-family:'JetBrains Mono'; font-size:0.55rem;">> SHIELD_ACTIVE_100%<br>> SYSTEM_SECURE_BY_VANGUARD</p>
+                <p style="color:#39FF14; font-family:'JetBrains Mono'; font-size:0.55rem;">
+                    > SHIELD_ACTIVE_100%<br>> SYSTEM_SECURE_BY_VANGUARD
+                </p>
                 <button style="border-color:#39FF14; color:#39FF14; margin-top:15px;">SYSTEM_PROTECTED</button>
                 
                 <div style="margin-top:30px;">
@@ -63,7 +87,53 @@
                     <button onclick="location.href='exemplo3.html'">Apple_Core</button>
                     <button onclick="location.href='exemplo4.html'">Crypto_Dash</button>
                     <button onclick="location.href='exemplo5.html'">Agency_Web</button>
+                    
                     <button style="border-color:#39FF14; color:#39FF14;" onclick="copiarPix()">Payment_Gate</button>
                 </div>
                 <div style="margin-top:30px;">
-                    <span class="label">
+                    <span class="label">Professional_Brief</span>
+                    <p style="font-size:0.5rem; color:#666; font-family:'JetBrains Mono';">
+                        Especialista em criar infraestruturas blindadas com design estratégico.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <button class="main-btn" onclick="location.href='https://wa.me/5569992636349'">CONTRATAR ESPECIALISTA</button>
+        
+        <div class="footer-nav">
+            <span>SOBRE NÓS</span> <span>F.A.Q</span> <span>DETALHES TÉCNICOS</span>
+        </div>
+    </div>
+
+    <script>
+        // FUNÇÃO PIX - TESTADA E FUNCIONAL
+        function copiarPix() {
+            const chave = "10267545266";
+            
+            // Tenta usar a API moderna de área de transferência
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(chave).then(() => {
+                    alert("Chave Pix Copiada: " + chave);
+                }).catch(err => {
+                    alert("Chave: " + chave);
+                });
+            } else {
+                // Fallback para navegadores antigos ou sem suporte HTTPS pleno
+                const textArea = document.createElement("textarea");
+                textArea.value = chave;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                alert("Chave Pix Copiada: " + chave);
+            }
+        }
+
+        // Bloqueio de F12 para proteção básica
+        document.onkeydown = function(e) {
+            if(event.keyCode == 123) return false;
+        };
+    </script>
+</body>
+</html>
