@@ -10,36 +10,35 @@
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
         body { background: #000; color: #fff; font-family: 'Orbitron', sans-serif; overflow: hidden; height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; }
 
-        /* Splash Screen (image_e8575a.png) */
         #splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #39FF14; transition: 0.5s; }
+        #hub-screen { display: none; width: 90%; max-width: 1000px; flex-direction: column; align-items: center; z-index: 10; }
+        
+        .chroma { color: #39FF14; text-shadow: 0 0 20px #39FF14; margin-bottom: 50px; letter-spacing: 8px; font-size: 1.8rem; }
 
-        /* Hub Content (image_e7e717.png) */
-        #hub-screen { display: none; width: 90%; max-width: 1100px; flex-direction: column; align-items: center; z-index: 10; }
-        .chroma { color: #39FF14; text-shadow: 0 0 20px #39FF14; margin-bottom: 40px; letter-spacing: 8px; font-size: 1.8rem; }
-
-        /* Grid de Operações */
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; width: 100%; }
-        .card { background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; padding: 30px; border-radius: 10px; transition: 0.4s; }
+        .card { background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; padding: 40px; border-radius: 10px; transition: 0.4s; text-align: center; }
+        
         .card-sec { border-color: #ff3131; }
         .card-sol { border-color: #39FF14; }
 
-        /* Botões */
-        .btn-inner { background: none; border: 1px solid #333; color: #666; padding: 12px; width: 100%; margin-top: 10px; font-family: 'Orbitron'; font-size: 0.6rem; transition: 0.3s; cursor: pointer; }
+        .btn-inner { background: none; border: 1px solid #333; color: #666; padding: 15px; width: 100%; margin-top: 15px; font-family: 'Orbitron'; font-size: 0.65rem; transition: 0.3s; cursor: pointer; text-transform: uppercase; }
         .btn-inner:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.05); }
-        .active-btn { border-color: #39FF14; color: #39FF14; text-shadow: 0 0 5px #39FF14; }
+        
+        /* BOTÃO APOIE PIX (NOVO) */
+        .btn-pix { border-color: #39FF14; color: #39FF14; box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.1); font-weight: bold; }
+        .btn-pix:hover { background: #39FF14; color: #000; box-shadow: 0 0 20px #39FF14; }
 
-        /* Botão Principal */
-        .main-action { background: #39FF14; color: #000; font-weight: bold; margin-top: 50px; width: 350px; border: none; padding: 20px; font-size: 0.9rem; letter-spacing: 3px; box-shadow: 0 0 20px #39FF14; transition: 0.3s; cursor: pointer; }
+        .main-action { background: #39FF14; color: #000; font-weight: bold; margin-top: 60px; width: 380px; border: none; padding: 22px; font-size: 0.9rem; letter-spacing: 3px; box-shadow: 0 0 25px #39FF14; transition: 0.3s; cursor: pointer; }
         .main-action:hover { background: #fff; transform: scale(1.05); }
 
-        .footer { margin-top: 40px; display: flex; gap: 40px; color: #222; font-size: 0.7rem; text-transform: uppercase; }
+        .footer { position: absolute; bottom: 30px; display: flex; gap: 40px; color: #222; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
     <div id="splash" onclick="unlock()">
-        <p style="font-family: 'JetBrains Mono';">> INITIALIZING_SECURE_VANGUARD_BOOT...</p>
-        <p style="font-size: 0.4rem; color: #111; margin-top: 10px;">AUTH: KOVALIOSKY_DEV // [ ENCRYPTED_SESSION ]</p>
+        <p style="font-family: 'JetBrains Mono';">> INITIALIZING_VANGUARD_CORE...</p>
+        <p style="font-size: 0.4rem; color: #111; margin-top: 10px;">AUTH_REQ: KOVALIOSKY_SESSION</p>
     </div>
 
     <div id="hub-screen">
@@ -47,14 +46,16 @@
         
         <div class="grid">
             <div class="card card-sec">
-                <p style="color: #ff3131; font-size: 0.6rem; text-align: center; margin-bottom: 20px;">SECURITY_SHIELD</p>
-                <p style="color: #ff3131; font-family: 'JetBrains Mono'; font-size: 0.5rem; text-align: center;">> STATUS: PROTECTED</p>
-                <button class="btn-inner" style="border-color: #ff3131; color: #ff3131; margin-top: 30px;">RUN_SCAN</button>
+                <p style="color: #ff3131; font-size: 0.6rem; margin-bottom: 25px; letter-spacing: 2px;">SECURITY_SHIELD</p>
+                <p style="color: #ff3131; font-family: 'JetBrains Mono'; font-size: 0.5rem;">> STATUS: PROTECTED</p>
+                <button class="btn-inner" style="border-color: #ff3131; color: #ff3131; margin-top: 40px;">RUN_SCAN</button>
             </div>
 
             <div class="card card-sol">
-                <p style="color: #39FF14; font-size: 0.6rem; text-align: center; margin-bottom: 20px;">SOLUTIONS</p>
-                <button class="btn-inner active-btn" onclick="copiarPix()">PAYMENT_GATE (COPY PIX)</button>
+                <p style="color: #39FF14; font-size: 0.6rem; margin-bottom: 25px; letter-spacing: 2px;">SOLUTIONS</p>
+                
+                <button class="btn-inner btn-pix" onclick="copiarPix()">APOIE VIA PIX (COPIAR)</button>
+                
                 <button class="btn-inner" onclick="location.href='https://wa.me/5569992636349'">CLEAN_UI_DESIGN</button>
             </div>
         </div>
@@ -62,8 +63,8 @@
         <button class="main-action" onclick="location.href='https://wa.me/5569992636349'">CONTRATAR AGORA</button>
 
         <div class="footer">
-            <span>Guilherme Kovaliosky</span>
-            <span>Senior Software Engineer</span>
+            <span>GUILHERME KOVALIOSKY</span>
+            <span>SENIOR SOFTWARE ENGINEER</span>
         </div>
     </div>
 
@@ -76,13 +77,17 @@
             }, 500);
         }
 
-        // Função para facilitar o pagamento via Pix
         function copiarPix() {
             const pix = "10267545266";
             navigator.clipboard.writeText(pix).then(() => {
-                alert("Chave Pix copiada: " + pix + "\nUse no seu app de banco para realizar o pagamento.");
+                alert("Chave Pix Copiada: " + pix + "\nObrigado pelo apoio ao projeto Vanguard!");
             });
         }
+
+        // Proteção contra curiosos
+        document.onkeydown = function(e) {
+            if(event.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
+        };
     </script>
 </body>
 </html>
