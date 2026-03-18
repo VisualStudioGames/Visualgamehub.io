@@ -7,39 +7,92 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;700&display=swap');
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        
         body { 
             background: #000; color: #fff; font-family: 'Orbitron', sans-serif; 
             overflow: hidden; height: 100vh; width: 100vw; 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
         }
 
-        /* SPLASH SCREEN (SIMULAÇÃO DE BOOT) */
-        #splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: #39FF14; transition: 0.5s; }
-
-        /* HUB CONTENT */
-        #hub-screen { display: none; width: 100%; max-width: 1000px; flex-direction: column; align-items: center; justify-content: center; z-index: 10; padding: 20px; text-align: center; }
-        .chroma { color: #39FF14; text-shadow: 0 0 15px #39FF14; margin-bottom: 25px; letter-spacing: 5px; font-size: 1.4rem; }
-
-        /* GRID PRINCIPAL (EM LINHA CONFORME A FOTO) */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; text-align: left; }
-        .card { background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; transition: 0.4s; }
-        
-        /* STATUS VERDE JÁ ATIVO (EDITADO) */
-        .status-green { color: #39FF14; border-color: #39FF14 !important; text-shadow: 0 0 10px #39FF14; box-shadow: 0 0 15px rgba(57, 255, 20, 0.2); }
-
-        /* TEXTOS PROFISSIONAIS */
-        .label { font-family: 'JetBrains Mono'; font-size: 0.5rem; color: #444; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .main-text { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #888; line-height: 1.5; margin-bottom: 15px; }
-
-        /* BOTÕES DE SOLUÇÕES (MANTIDOS DESATIVADOS CONFORME A FOTO) */
-        .sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;}
-        button { 
-            background: none; border: 1px solid #333; color: #666; padding: 10px; 
-            width: 100%; cursor: pointer; font-family: 'Orbitron'; font-size: 0.5rem; 
-            transition: 0.3s; text-transform: uppercase; 
+        /* Container Principal - VISÍVEL POR PADRÃO */
+        #hub-screen { 
+            display: flex; width: 100%; max-width: 1000px; 
+            flex-direction: column; align-items: center; justify-content: center; 
+            z-index: 10; padding: 20px; 
         }
-        button:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.05); }
 
-        /* BOTÃO PRINCIPAL (WHATSAPP - BARRA VERDE SÓLIDA) */
-        .contact-btn { background: #39FF14; color: #000; font-weight: bold; margin-top: 30px; width: 320px; border: none;
+        .chroma { 
+            color: #39FF14; text-shadow: 0 0 15px #39FF14; 
+            margin-bottom: 30px; letter-spacing: 5px; font-size: 1.4rem; 
+        }
+
+        /* Grid de Cards conforme sua imagem */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+        
+        .card { 
+            background: rgba(5, 5, 5, 0.8); border: 1px solid #1a1a1a; 
+            padding: 25px; border-radius: 15px; text-align: left;
+        }
+        
+        /* Estilo Verde Ativo (Security Shield) */
+        .status-green { 
+            border-color: #39FF14 !important; 
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.1); 
+        }
+
+        .label { font-family: 'JetBrains Mono'; font-size: 0.5rem; color: #444; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        
+        /* Botões de Soluções */
+        .sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        
+        button { 
+            background: none; border: 1px solid #333; color: #666; 
+            padding: 10px; font-family: 'Orbitron'; font-size: 0.5rem; 
+            text-transform: uppercase; cursor: pointer; transition: 0.3s;
+        }
+        
+        button:hover { border-color: #39FF14; color: #39FF14; }
+
+        /* Botão Contratar Especialista */
+        .main-btn { 
+            background: #39FF14; color: #000; font-weight: bold; 
+            margin-top: 40px; width: 350px; border: none; padding: 18px; 
+            font-size: 0.8rem; letter-spacing: 2px; cursor: pointer;
+        }
+
+        .main-btn:hover { background: #fff; box-shadow: 0 0 20px #39FF14; }
+    </style>
+</head>
+<body>
+
+    <div id="hub-screen">
+        <h1 class="chroma">VANGUARD_CORE_HUB</h1>
+        
+        <div class="grid">
+            <div class="card status-green">
+                <span class="label">Cybersecurity_Module</span>
+                <h3 style="color:#39FF14; font-size:0.7rem; margin-bottom:10px;">SECURITY_SHIELD</h3>
+                <p style="color:#39FF14; font-family:'JetBrains Mono'; font-size:0.6rem; line-height:1.4;">
+                    > SHIELD_ACTIVE_100%<br>> SYSTEM_SECURE_BY_VANGUARD
+                </p>
+                <button style="border-color:#39FF14; color:#39FF14; margin-top:15px; width:100%;">SYSTEM_PROTECTED</button>
+                
+                <div style="margin-top:30px;">
+                    <span class="label">Lead_Engineer</span>
+                    <p style="font-size:0.55rem; font-family:'JetBrains Mono';">GUILHERME KOVALIOSKY<br>Senior Dev | Cyber Specialist</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="label">Strategic_Deployments</span>
+                <h3 style="font-size:0.7rem; margin-bottom:10px;">ACTIVE_SOLUTIONS_V1</h3>
+                <div class="sol-grid">
+                    <button>Neon_Noir</button>
+                    <button>Clean_UX</button>
+                    <button>Apple_Core</button>
+                    <button>Crypto_Dash</button>
+                    <button>Agency_Web</button>
+                    <button onclick="copiarPix()">Payment_Gate</button>
+                </div>
+                <div style="margin-top:
