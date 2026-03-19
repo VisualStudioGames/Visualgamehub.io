@@ -3,104 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisualStudioAndSecurity | Kv's Enterprise</title>
+    <title>VisualStudioAndSecurity | Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Courier New', monospace;
-            overflow-x: hidden;
         }
 
         .border-neon {
             border: 1px solid #00ff00;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
         }
 
-        /* ANIMAÇÃO RGB NO TÍTULO */
         .color-shift {
             animation: colorChange 8s infinite linear;
         }
 
         @keyframes colorChange {
-            0% {
+            0%, 100% {
                 color: #00ff00;
                 text-shadow: 0 0 10px #00ff00;
             }
 
-            25% {
+            33% {
                 color: #00ffff;
                 text-shadow: 0 0 10px #00ffff;
             }
 
-            50% {
+            66% {
                 color: #ff00ff;
                 text-shadow: 0 0 10px #ff00ff;
             }
-
-            75% {
-                color: #ffff00;
-                text-shadow: 0 0 10px #ffff00;
-            }
-
-            100% {
-                color: #00ff00;
-                text-shadow: 0 0 10px #00ff00;
-            }
         }
 
-        /* BOTÕES DO MENU MINIMALISTA */
         .nav-btn {
             border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: 0.3s;
             text-align: center;
+            display: block;
         }
 
             .nav-btn:hover {
                 border-color: #00ff00;
                 color: #00ff00;
-                box-shadow: 0 0 10px rgba(0,255,0,0.3);
-                transform: translateY(-1px);
             }
     </style>
 </head>
-<body class="p-4 md:p-12 flex items-center justify-center min-h-screen">
+<body class="p-6 min-h-screen flex flex-col items-center justify-center">
 
-    <div class="max-w-5xl w-full">
-        <h1 class="text-center text-3xl md:text-5xl font-black color-shift mb-8 tracking-[0.2em]">VisualStudioAndSecurity</h1>
+    <h1 class="text-3xl md:text-5xl font-black color-shift mb-6 tracking-widest text-center">VisualStudioAndSecurity</h1>
 
-        <div class="flex flex-wrap justify-center gap-2 mb-16 border-t border-b border-white/10 py-6">
-            <a href="exemplo1.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_01</a>
-            <a href="exemplo2.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_02</a>
-            <a href="exemplo3.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_03</a>
-            <a href="exemplo4.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_04</a>
-            <a href="exemplo5.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_05</a>
-            <a href="exemplo6.html" class="nav-btn px-3 py-1 text-[9px] font-bold">LP_06</a>
-            <a href="https://github.com/VisualStudioandSecurity/visualgamehub.io/blob/main/README.md" target="_blank" class="nav-btn px-4 py-1 text-[9px] font-bold border-blue-500 text-blue-400 hover:border-blue-500">FICHA</a>
-            <a href="https://wa.me/5599999999999" target="_blank" class="nav-btn px-4 py-1 text-[9px] font-bold border-purple-500 text-purple-400 hover:border-purple-500">WHATSAPP</a>
+    <div class="flex flex-wrap justify-center gap-2 mb-10 border-y border-white/10 py-4 w-full max-w-4xl">
+        <a href="exemplo1.html" class="nav-btn px-4 py-1 text-[10px]">LP_01</a>
+        <a href="exemplo2.html" class="nav-btn px-4 py-1 text-[10px]">LP_02</a>
+        <a href="exemplo3.html" class="nav-btn px-4 py-1 text-[10px]">LP_03</a>
+        <a href="exemplo4.html" class="nav-btn px-4 py-1 text-[10px]">LP_04</a>
+        <a href="exemplo5.html" class="nav-btn px-4 py-1 text-[10px]">LP_05</a>
+        <a href="exemplo6.html" class="nav-btn px-4 py-1 text-[10px]">LP_06</a>
+        <a href="https://github.com/VisualStudioandSecurity" target="_blank" class="nav-btn px-4 py-1 text-[10px] border-blue-500 text-blue-400">FICHA</a>
+        <a href="https://wa.me/556992636349" target="_blank" class="nav-btn px-4 py-1 text-[10px] border-purple-500 text-purple-400">WHATSAPP</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">
+        <div class="border-neon p-8 rounded-2xl bg-black">
+            <h2 class="text-lg font-bold text-[#00ff00] mb-4">Security_Shield</h2>
+            <div class="bg-white/5 p-6 rounded-lg">
+                <p class="text-[9px] text-gray-500 mb-1 uppercase">BTC/USDT Live</p>
+                <div id="btc-price" class="text-2xl font-bold text-[#00ff00]">CONECTANDO...</div>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="border-neon p-8 rounded-3xl bg-black/80">
-                <h2 class="text-xl font-bold text-[#00ff00] mb-6 uppercase tracking-widest">Security_Shield</h2>
-                <div class="bg-[#00ff00]/5 border border-[#00ff00]/20 p-6 rounded-xl mb-12">
-                    <p class="text-[10px] text-gray-500 uppercase mb-2">BTC/USDT LIVE MARKET</p>
-                    <span id="btc-price" class="text-3xl font-mono font-bold text-[#00ff00]">CONECTANDO...</span>
-                </div>
-                <div class="border-t border-white/10 pt-6">
-                    <p class="text-[10px] text-gray-400 uppercase">Lead Engineer:</p>
-                    <p class="text-sm font-bold tracking-widest uppercase">Guilherme Kovaliosky</p>
-                </div>
-            </div>
+        <div class="border-neon p-8 rounded-2xl bg-black">
+            <h2 class="text-lg font-bold mb-4 uppercase">Active_Solutions</h2>
+            <a href="https://github.com/VisualStudioandSecurity" target="_blank" class="block p-4 border border-[#00ff00]/30 text-center hover:bg-[#00ff00] hover:text-black transition-all">
+                REPOS: <span id="repo-count">0</span>
+            </a>
+        </div>
+    </div>
 
-            <div class="border-neon p-8 rounded-3xl bg-black/80">
-                <h2 class="text-xl font-bold mb-8 uppercase tracking-widest">Active_Solutions_v1</h2>
-                <div class="mb-8">
-                    <a href="https://github.com/VisualStudioandSecurity" target="_blank" class="block w-full p-6 border border-[#00ff00]/40 text-[#00ff00] text-center text-lg font-bold hover:bg-[#00ff00] hover:text-black transition-all">
-                        REPOS_ATIVOS: <span id="repo-count">0</span>
-                    </a>
-                </div>
-                <a href="
+    <script>
+        window.addEventListener('load', () => {
+            const btcDisplay = document.getElementById('btc-price');
+            const repoDisplay = document.getElementById('repo-count');
+
+            // Conexão Bitcoin
+            const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
+            btcWs.onmessage = (e) => {
+                const data = JSON.parse(e.data);
+                if (data.c) {
+                    btcDisplay.innerText = '$' + parseFloat(data.c).toLocaleString(undefined, { minimumFractionDigits: 2 });
+                }
+            };
+
+            // Busca GitHub
+            fetch('https://api.github.com/users/VisualStudioandSecurity')
+                .then(r => r.json())
+                .then(d => {
+                    if (repoDisplay) repoDisplay.innerText = d.public_repos || '0';
+                })
+                .catch(() => { if (repoDisplay) repoDisplay.innerText = 'OFF'; });
+        });
+    </script>
+</body>
+</html>
