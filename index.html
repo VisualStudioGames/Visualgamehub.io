@@ -1,157 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisualStudioAndSecurity | Digital Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', monospace;
-        }
+<section id="faq" class="pb-24">
+    <h2 class="text-[#00ff00] font-bold mb-8 uppercase tracking-widest">// FAQ_Database</h2>
+    <div class="space-y-6">
 
-        .border-neon {
-            border: 1px solid #00ff00;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-        }
+        <details class="group border-b border-white/10 pb-6 cursor-pointer">
+            <summary class="font-bold text-white uppercase text-sm list-none flex justify-between items-center">
+                01. Qual o foco principal das soluções?
+                <span class="text-[#00ff00] group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-gray-500 text-xs mt-4 leading-relaxed">
+                Priorizamos a tríade: **Design de Elite**, **Performance** e **Segurança Máxima**.
+                Cada linha de código é escrita visando a estabilidade do sistema e uma experiência de usuário (UX) intuitiva e agressiva.
+            </p>
+        </details>
 
-        .color-shift {
-            animation: colorChange 8s infinite linear;
-        }
+        <details class="group border-b border-white/10 pb-6 cursor-pointer">
+            <summary class="font-bold text-white uppercase text-sm list-none flex justify-between items-center">
+                02. Como é garantida a segurança dos projetos?
+                <span class="text-[#00ff00] group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-gray-500 text-xs mt-4 leading-relaxed">
+                Implementamos protocolos de criptografia e validação de dados em todas as camadas.
+                Seja em landing pages ou bots de monitoramento, a integridade da informação é o nosso requisito não-negociável.
+            </p>
+        </details>
 
-        @keyframes colorChange {
-            0%, 100% {
-                color: #00ff00;
-                text-shadow: 0 0 10px #00ff00;
-            }
+        <details class="group border-b border-white/10 pb-6 cursor-pointer">
+            <summary class="font-bold text-white uppercase text-sm list-none flex justify-between items-center">
+                03. O desenvolvimento é exclusivo?
+                <span class="text-[#00ff00] group-open:rotate-180 transition-transform">↓</span>
+            </summary>
+            <p class="text-gray-500 text-xs mt-4 leading-relaxed">
+                Sim. Não utilizamos templates genéricos. Cada interface é desenhada sob medida para refletir a identidade visual e a autoridade do cliente no mercado digital.
+            </p>
+        </details>
 
-            33% {
-                color: #00ffff;
-                text-shadow: 0 0 10px #00ffff;
-            }
-
-            66% {
-                color: #ff00ff;
-                text-shadow: 0 0 10px #ff00ff;
-            }
-        }
-
-        section {
-            min-height: 80vh;
-            padding-top: 100px;
-        }
-
-        .nav-link {
-            font-size: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-            letter-spacing: 0.1em;
-        }
-
-            .nav-link:hover {
-                color: #00ff00;
-                text-shadow: 0 0 8px #00ff00;
-            }
-    </style>
-</head>
-<body class="bg-black text-white">
-
-    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 p-4">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <span class="text-[10px] font-black text-[#00ff00]">VS_S_CORE</span>
-            <div class="flex gap-4">
-                <a href="#hub" class="nav-link uppercase">Hub</a>
-                <a href="#portfolio" class="nav-link uppercase">Projetos</a>
-                <a href="#sobre" class="nav-link uppercase">Sobre</a>
-                <a href="#faq" class="nav-link uppercase">FAQ</a>
-                <a href="https://wa.me/556992636349" target="_blank" class="nav-link text-purple-400">CONTATO</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="max-w-5xl mx-auto px-6">
-
-        <header class="h-[60vh] flex flex-col items-center justify-center">
-            <h1 class="text-4xl md:text-6xl font-black color-shift mb-4 tracking-widest text-center">
-                VisualStudioAndSecurity
-            </h1>
-            <p class="text-gray-500 text-[10px] tracking-[0.5em] uppercase">Advanced Digital Solutions</p>
-            <div class="mt-12 animate-bounce text-[#00ff00]">↓</div>
-        </header>
-
-        <section id="hub">
-            <h2 class="text-xl font-bold mb-8 text-[#00ff00]">// OPERATIONAL_HUB</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="border-neon p-8 rounded-2xl bg-black/50">
-                    <h3 class="text-sm font-bold text-gray-400 mb-4 uppercase">Security_Shield</h3>
-                    <div class="bg-white/5 p-6 rounded-lg">
-                        <p class="text-[9px] text-gray-500 mb-1 uppercase">BTC/USDT Live</p>
-                        <div id="btc-price" class="text-3xl font-bold text-[#00ff00]">CONECTANDO...</div>
-                    </div>
-                </div>
-                <div class="border-neon p-8 rounded-2xl bg-black/50">
-                    <h3 class="text-sm font-bold text-gray-400 mb-4 uppercase">Active_Solutions</h3>
-                    <div class="bg-white/5 p-6 rounded-lg text-center">
-                        <p class="text-[9px] text-gray-500 mb-1 uppercase">GitHub Repos</p>
-                        <div id="repo-count" class="text-3xl font-bold">0</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <h2 class="text-xl font-bold mb-8 text-[#00ff00]">// SYSTEM_MODELS (LPs)</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <a href="exemplo1.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_01</a>
-                <a href="exemplo2.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_02</a>
-                <a href="exemplo3.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_03</a>
-                <a href="exemplo4.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_04</a>
-                <a href="exemplo5.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_05</a>
-                <a href="exemplo6.html" class="border border-white/10 p-6 text-center hover:border-[#00ff00] transition">LP_06</a>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <div class="border border-white/10 p-12 rounded-3xl bg-white/5">
-                <h2 class="text-[#00ff00] font-bold mb-6 uppercase tracking-widest">// Profile_Data</h2>
-                <p class="text-gray-400 text-lg leading-relaxed">
-                    Guilherme Kovaliosky: Desenvolvedor Senior e Especialista em Cyber Segurança.
-                    Focado em automação de trading de criptoativos e desenvolvimento de jogos.
-                </p>
-            </div>
-        </section>
-
-        <section id="faq" class="pb-24">
-            <h2 class="text-[#00ff00] font-bold mb-8 uppercase tracking-widest">// FAQ_Database</h2>
-            <div class="space-y-6">
-                <details class="group border-b border-white/10 pb-4 cursor-pointer">
-                    <summary class="font-bold text-white uppercase text-sm list-none">01. Metodologia de trabalho?</summary>
-                    <p class="text-gray-500 text-xs mt-4">Foco em agilidade, segurança e resultados reais com trading automatizado.</p>
-                </details>
-                <details class="group border-b border-white/10 pb-4 cursor-pointer">
-                    <summary class="font-bold text-white uppercase text-sm list-none">02. Como entrar em contato?</summary>
-                    <p class="text-gray-500 text-xs mt-4">Use o canal de WhatsApp para consultoria direta e orçamentos.</p>
-                </details>
-            </div>
-        </section>
     </div>
+</section>
 
-    <script>
-        window.onload = () => {
-            const btcDisplay = document.getElementById('btc-price');
-            const btcWs = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
-            btcWs.onmessage = (e) => {
-                const data = JSON.parse(e.data);
-                if (data.c) btcDisplay.innerText = '$' + parseFloat(data.c).toLocaleString(undefined, { minimumFractionDigits: 2 });
-            };
-
-            fetch('https://api.github.com/users/VisualStudioandSecurity')
-                .then(r => r.json()).then(d => {
-                    document.getElementById('repo-count').innerText = d.public_repos || '0';
-                });
-        };
-    </script>
-</body>
-</html>
+<footer class="py-12 border-t border-white/5 text-center">
+    <p class="text-[9px] text-gray-600 tracking-[0.5em] uppercase">
+        © 2026 VisualStudioAndSecurity // All Rights Reserved
+    </p>
+</footer>
