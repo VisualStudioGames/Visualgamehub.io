@@ -1,34 +1,133 @@
-<div class="tradingview-widget-container" style="height:500px;width:100%">
-  <div id="tradingview_advanced_chart" style="height:100%;width:100%"></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-    "autosize": true,
-    "symbol": "BINANCE:BTCUSDT",
-    "interval": "240",
-    "timezone": "America/Sao_Paulo",
-    "theme": "dark",
-    "style": "1",
-    "locale": "br",
-    "toolbar_bg": "#161b22",
-    "enable_publishing": false,
-    "withdateranges": true,
-    "hide_side_toolbar": false,
-    "allow_symbol_change": true,
-    "details": true,
-    "hotlist": true,
-    "calendar": true,
-    "show_popup_button": true,
-    "popup_width": "1000",
-    "popup_height": "650",
-    "container_id": "tradingview_advanced_chart",
-    "studies": [
-      "MACD@tv-basicstudies",
-      "RSI@tv-basicstudies"
-    ],
-    "disabled_features": ["header_screenshot"],
-    "enabled_features": ["study_templates"]
-  });
-  </script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Finance | Crypto Intelligence</title>
+    <link rel="stylesheet" href="finance-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="finance-header">
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">BTC/USDT: <span id="btc-price" class="up">Carregando...</span></span>
+            <span class="ticker-item">DOMINÂNCIA BTC: <span class="up">52.4%</span></span>
+            <span class="ticker-item">SENTIMENTO: <span class="up">GANÂNCIA</span></span>
+        </div>
+    </div>
+    <h1 class="logo">Kovaliosky <span>Finance</span></h1>
+    <p>Análise Quantitativa e Estratégias de Alta Alavancagem</p>
+</header>
+
+<div class="container">
+    
+    <section class="trading-view">
+        <div class="card main-analysis">
+            <span class="tag">Live Chart: 4H Timeframe</span>
+            <h2>Bitcoin (BTC) - Monitoramento de Price Action</h2>
+            
+            <div class="tradingview-widget-container" style="height:550px;width:100%; margin-top: 20px;">
+                <div id="tradingview_advanced_chart" style="height:100%;width:100%"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                    "autosize": true,
+                    "symbol": "BINANCE:BTCUSDT",
+                    "interval": "240",
+                    "timezone": "America/Sao_Paulo",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "br",
+                    "toolbar_bg": "#161b22",
+                    "enable_publishing": false,
+                    "withdateranges": true,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "details": true,
+                    "hotlist": true,
+                    "container_id": "tradingview_advanced_chart",
+                    "studies": [
+                        "MACD@tv-basicstudies",
+                        "RSI@tv-basicstudies"
+                    ]
+                });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid">
+        <article class="card risk-management">
+            <h3>Calculadora de Exposição (Futures)</h3>
+            <div class="calculator-inputs">
+                <label>Capital (USDT):</label>
+                <input type="number" id="balance" value="1000" oninput="calculateRisk()">
+                
+                <label>Alavancagem (Max 50x):</label>
+                <input type="number" id="leverage" value="20" min="1" max="50" oninput="calculateRisk()">
+            </div>
+
+            <table class="risk-table">
+                <thead>
+                    <tr>
+                        <th>Cenário</th>
+                        <th>Exposição Total</th>
+                        <th>Stop Loss (1%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Posição Aberta</td>
+                        <td id="total-exposure">USDT 20.000,00</td>
+                        <td id="safe-stop">USDT 10,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="warning-text">⚠️ Risco de liquidação imediata em volatilidade extrema.</p>
+        </article>
+        
+        <article class="card">
+            <h3>Setup: Shooting Star + MACD</h3>
+            <p>Operações focadas em reversão de topo. Aguardar o fechamento do candle de 4H para confirmação da sombra superior longa.</p>
+            <ul style="color: var(--text-gray); font-size: 0.9rem;">
+                <li>Confirmação: Cruzamento descendente no MACD.</li>
+                <li>RSI: Ideal acima de 70 para Short.</li>
+                <li>Target: Suporte da média móvel de 200 períodos.</li>
+            </ul>
+        </article>
+    </div>
 </div>
+
+<footer>
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Estratégias</a>
+        <a href="#">Repositório GitHub</a>
+    </nav>
+    <p>&copy; 2026 Kovaliosky DeV | Licenciado sob Apache 2.0</p>
+</footer>
+
+<script>
+    // Lógica da Calculadora
+    function calculateRisk() {
+        const balance = document.getElementById('balance').value;
+        const leverage = document.getElementById('leverage').value;
+        const exposure = balance * leverage;
+        const riskAmount = balance * 0.01;
+
+        document.getElementById('total-exposure').innerText = `USDT ${exposure.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+        document.getElementById('safe-stop').innerText = `USDT ${riskAmount.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+    }
+
+    // Simulação de Ticker em tempo real (Pode integrar API da Binance futuramente)
+    setInterval(() => {
+        const basePrice = 65000; 
+        const randomVar = (Math.random() * 100).toFixed(2);
+        document.getElementById('btc-price').innerText = `USDT ${(basePrice + parseFloat(randomVar)).toLocaleString('en-US')}`;
+    }, 3000);
+</script>
+
+</body>
+</html>
