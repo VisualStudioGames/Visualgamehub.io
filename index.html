@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio & Security | Hub de Cibersegurança</title>
+    <title>Visual Studio & Security | Hub de Inteligência Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -26,21 +26,22 @@
         
         .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
         
-        article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .featured-img { width: 100%; height: 250px; background-color: #21262d; background-size: cover; background-position: center; }
+        .featured-article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 30px; }
+        .article-header-img { width: 100%; height: 350px; background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; }
         
-        .body { padding: 30px; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; color: white; background: var(--accent-green); }
-
-        h1, h2, h3 { color: var(--header); line-height: 1.3; }
-        .meta { font-size: 0.85rem; color: #8b949e; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .article-body { padding: 40px; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; background: var(--accent-green); color: white; }
         
-        pre { background: var(--code-bg); padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--border); color: #79c0ff; font-size: 0.9rem; margin: 20px 0; }
-        code { font-family: 'Consolas', monospace; }
-
-        .cta-box { background: rgba(88, 166, 255, 0.1); border-left: 4px solid var(--accent-blue); padding: 15px; margin: 20px 0; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
+        h1.post-title { font-size: 2.2rem; color: var(--header); margin-top: 0; line-height: 1.2; }
+        .meta { font-size: 0.85rem; color: #8b949e; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        
+        .post-content h3 { color: var(--accent-blue); margin-top: 30px; border-left: 4px solid var(--accent-blue); padding-left: 15px; }
+        .post-content p { margin-bottom: 20px; text-align: justify; }
+        .post-content ul { padding-left: 20px; margin-bottom: 25px; }
+        .post-content li { margin-bottom: 10px; }
+        
+        .code-block { background: var(--code-bg); padding: 20px; border-radius: 8px; border: 1px solid var(--border); font-family: 'Consolas', monospace; color: #79c0ff; font-size: 0.9rem; overflow-x: auto; margin: 25px 0; }
+        .warning-box { background: rgba(241, 196, 15, 0.1); border: 1px solid #f1c40f; padding: 20px; border-radius: 8px; margin: 25px 0; }
 
         footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); margin-top: 50px; }
         .nav-links a { color: var(--accent-blue); text-decoration: none; margin: 0 10px; }
@@ -50,27 +51,58 @@
 
 <header>
     <h1 class="logo">Visual Studio <span>& Security</span></h1>
-    <p>Hub de Cibersegurança e Inteligência em TI</p>
+    <p>Hub de Inteligência em Cibersegurança e Mercado Financeiro</p>
 </header>
 
 <div class="container">
-    
-    <article>
-        <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200');"></div>
-        <div class="body">
-            <span class="badge">Análise Técnica</span>
-            <h1>Campanha FAUX#ELEVATE: O Ataque de 25 Segundos</h1>
-            <div class="meta">Por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
+    <article class="featured-article">
+        <div class="article-header-img"></div>
+        <div class="article-body">
+            <span class="badge">Relatório Técnico Profissional</span>
+            <h1 class="post-title">Análise Forense: Campanha FAUX#ELEVATE e o Sequestro de Recursos Corporativos</h1>
+            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
             
-            <p>A campanha <strong>FAUX#ELEVATE</strong> utiliza currículos falsos como isca ("bait") para comprometer ambientes corporativos em tempo recorde.</p>
-            
-            <h3>Mecânica da Infecção</h3>
-            <ul>
-                <li><strong>O Bait:</strong> O usuário vê uma mensagem de erro de arquivo corrompido, disfarçando um script VBScript de 224 mil linhas.</li>
-                <li><strong>Velocidade:</strong> A infecção completa, do início até a exfiltração de dados, leva aproximadamente 25 segundos.</li>
-                <li><strong>Exfiltração:</strong> Credenciais são enviadas via SMTP para domínios russos como <em>olga.aitsaid@mail.ru</em>.</li>
-                <li><strong>Persistência:</strong> O malware desativa o Microsoft Defender e altera o registro do Windows para desativar o UAC.</li>
-            </ul>
+            <div class="post-content">
+                <p>Hackers estão utilizando uma nova abordagem altamente sofisticada para comprometer redes empresariais, focando no roubo massivo de credenciais e na implementação de mineradores de criptoativos ocultos[cite: 1]. Esta operação, identificada por especialistas como <strong>FAUX#ELEVATE</strong>, utiliza engenharia social refinada e abusos de infraestruturas legítimas para contornar defesas tradicionais[cite: 2].</p>
 
-            <div class="cta-box">
-                <strong>Proteção Ativa:</strong> O malware utiliza o driver <em>WinRing0x
+                <h3>A Anatomia do Ataque: O VBScript de 224 Mil Linhas</h3>
+                <p>O ataque inicia-se com e-mails de phishing direcionados que entregam currículos (CVs) falsos[cite: 1, 3]. Quando o arquivo é aberto, o sistema exibe uma mensagem de erro simulando um arquivo corrompido — um "bait" clássico[cite: 3]. Por trás dessa tela, o Windows executa um script <strong>Visual Basic Script (VBS)</strong> massivo com aproximadamente 224 mil linhas de código ofuscado, das quais apenas 226 contêm a carga útil real[cite: 3].</p>
+
+                <h3>Exfiltração via SMTP e Roubo de Credenciais</h3>
+                <p>O malware utiliza o projeto <em>ChromElevator</em> para contornar as proteções de criptografia vinculada a aplicativos (ABE) e extrair senhas de navegadores baseados em Chromium[cite: 5]. Além disso, ferramentas específicas como o <strong>mozilla.vbs</strong> e o <strong>walls.vbs</strong> são implantadas para roubar perfis do Firefox e arquivos sensíveis diretamente do desktop[cite: 6].</p>
+                <p>Os dados roubados são exfiltrados através de duas contas russas independentes (<em>olga.aitsaid@mail.ru</em> e <em>3pw5nd9neeyn@mail.ru</em>) que compartilham a mesma senha via protocolo SMTP, enviando o conteúdo para o endereço final do atacante[cite: 6, 7].</p>
+
+                <h3>Criptomineração e Persistência no Kernel</h3>
+                <p>Após o roubo de dados, a campanha implementa o <strong>mservice.exe</strong> (XMRig) para minerar Monero[cite: 1, 6]. Para garantir o desempenho máximo, é utilizado o driver de kernel <strong>WinRing0x64.sys</strong>, permitindo o sequestro total do potencial da CPU[cite: 6]. O Trojan <strong>RuntimeHost.exe</strong> mantém a persistência, modificando regras de firewall e comunicando-se periodicamente com servidores de comando e controle (C2) hospedados em sites WordPress comprometidos[cite: 2, 6].</p>
+
+                <div class="warning-box">
+                    <strong>Alerta de Velocidade:</strong> A cadeia de infecção completa — da execução do VBS até a exfiltração final — ocorre em aproximadamente <strong>25 segundos</strong>, tornando a resposta manual humana praticamente impossível[cite: 10].
+                </div>
+
+                <h3>Mecanismo de Defesa Recomendado</h3>
+                <p>Para mitigar esta ameaça em sua rede, nossa equipe recomenda a aplicação imediata do seguinte script de endurecimento via PowerShell, focado em desativar o Windows Script Host e bloquear as portas de exfiltração SMTP:</p>
+
+                <div class="code-block">
+                    # Desativa o motor de execução VBScript malicioso<br>
+                    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Script Host\Settings" -Name "Enabled" -Value 0<br><br>
+                    # Bloqueia exfiltração via SMTP para e-mails desconhecidos<br>
+                    New-NetFirewallRule -DisplayName "Block_Malware_SMTP" -Direction Outbound -LocalPort 587 -Protocol TCP -Action Block
+                </div>
+
+                <p><em>Referência: Dados baseados no relatório técnico da Securonix sobre operações de ameaças em múltiplas etapas[cite: 9, 10].</em></p>
+            </div>
+        </div>
+    </article>
+</div>
+
+<footer>
+    <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="sitemap.xml">Sitemap</a>
+    </nav>
+    <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2026 Visual Studio & Security. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
