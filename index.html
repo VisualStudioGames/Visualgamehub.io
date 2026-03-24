@@ -32,6 +32,9 @@
         .article-body { padding: 40px; }
         
         .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; background: var(--accent-green); color: white; }
+        .badge-apple { background: #555; }
+        .badge-alert { background: #d73a49; }
+
         h1.post-title { font-size: 2.2rem; color: var(--header); margin-top: 0; line-height: 1.2; }
         .meta { font-size: 0.85rem; color: #8b949e; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
         
@@ -64,12 +67,24 @@
     <article class="featured-article">
         <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200');"></div>
         <div class="article-body">
-            <span class="badge">Análise Forense</span>
-            <h1 class="post-title">Campanha FAUX#ELEVATE: O Ataque de 25 Segundos e o Uso de VBScript Massivo</h1>
+            <span class="badge">Relatório Técnico</span>
+            <h1 class="post-title">Campanha FAUX#ELEVATE: O Ataque de 25 Segundos via VBScript</h1>
             <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
+            
             <div class="post-content">
-                <p>A operação coordenada <strong>FAUX#ELEVATE</strong> utiliza currículos falsos infectados com scripts VBScript de 224 mil linhas para infiltrar redes corporativas. O malware utiliza o <strong>WMI</strong> para focar em sistemas empresariais e exfiltrar dados via SMTP para endereços russos.</p>
-                <div class="warning-box"><strong>Velocidade Crítica:</strong> A infecção completa ocorre em apenas <strong>25 segundos</strong>.</div>
+                <p>A operação <strong>FAUX#ELEVATE</strong> utiliza currículos falsos (CVs) como isca para iniciar uma cadeia de infecção extremamente veloz. O malware utiliza scripts VBScript de 224 mil linhas para ocultar sua carga útil real, onde apenas 226 linhas contêm o código malicioso, evitando assim detecções por sandboxes automatizadas.</p>
+
+                <h3>Exfiltração e Arsenal de Malware</h3>
+                <ul>
+                    <li><strong>ChromElevator:</strong> Utilizado para extrair credenciais e dados de navegadores baseados em Chromium, contornando proteções ABE.</li>
+                    <li><strong>mozilla.vbs e walls.vbs:</strong> Responsáveis pelo roubo de perfis do Firefox e arquivos sensíveis localizados no desktop.</li>
+                    <li><strong>Mineração de Monero:</strong> Instala o minerador <em>mservice.exe</em> (XMRig) utilizando o driver <em>WinRing0x64.sys</em> para sequestrar o poder total da CPU.</li>
+                    <li><strong>Destino:</strong> Os dados roubados são enviados via SMTP para endereços russos, incluindo <em>olga.aitsaid@mail.ru</em>.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>Alerta:</strong> Todo o processo, desde a execução inicial até a exfiltração completa dos dados, ocorre em aproximadamente 25 segundos.
+                </div>
             </div>
         </div>
     </article>
@@ -77,52 +92,27 @@
     <article class="featured-article">
         <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200');"></div>
         <div class="article-body">
-            <span class="badge">Alerta Global de IA</span>
-            <h1 class="post-title">CNCERT Alerta para Vulnerabilidades no Agente Autônomo OpenClaw</h1>
+            <span class="badge badge-alert">Alerta CNCERT</span>
+            <h1 class="post-title">CNCERT Alerta para Riscos de Segurança no Agente de IA OpenClaw</h1>
             <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
+            
             <div class="post-content">
-                <p>O Centro de Resposta a Emergências de Redes da China (CNCERT) emitiu um comunicado urgente sobre o <strong>OpenClaw</strong>. Segundo o alerta, as diretrizes de segurança padrão frágeis da plataforma, somadas ao seu alto nível de privilégio no sistema, podem permitir que invasores assumam o controle total dos endpoints.</p>
+                <p>O CNCERT emitiu um alerta sobre o uso do <strong>OpenClaw</strong>, um agente de IA autônomo. O órgão destacou que configurações de segurança padrão fracas e o acesso privilegiado ao sistema podem ser explorados por agentes mal-intencionados para assumir o controle total do endpoint.</p>
 
                 <h3>Injeção Indireta de Prompt (IDPI)</h3>
-                <p>Uma das maiores ameaças identificadas é a Injeção de Prompt Cruz-Domínio (XPIA). Neste cenário, o atacante manipula o agente de IA através de conteúdos externos, como resumos de páginas web, forçando o sistema a vazar informações confidenciais ou ignorar filtros de segurança.</p>
+                <p>O ataque, também conhecido como XPIA, permite que adversários utilizem recursos benignos da IA, como resumo de páginas, para executar instruções manipuladas. Isso pode resultar no vazamento de informações sensíveis e até na paralisia de sistemas empresariais inteiros em setores como finanças e energia.</p>
                 
-                <h3>Riscos de Exfiltração via Apps de Mensagens</h3>
-                <p>Investigações recentes revelaram que o recurso de pré-visualização de links em plataformas como Telegram e Discord pode ser explorado. O agente de IA é enganado para criar uma URL dinâmica que envia dados sensíveis do usuário diretamente para o domínio do criminoso, sem que haja necessidade de um clique manual.</p>
-
-                <div class="warning-box">
-                    <strong>Recomendação de Defesa:</strong> Evite expor a porta de gerenciamento do OpenClaw à rede pública e desative a atualização automática de novas habilidades vindas de repositórios não verificados.
-                </div>
+                <p>Pesquisadores da PromptArmor descobriram que pré-visualizações de links em apps como Telegram e Discord podem ser transformadas em vias de exfiltração imediata, transmitindo dados confidenciais para domínios controlados por atacantes sem a necessidade de clique do usuário.</p>
             </div>
         </div>
     </article>
 
-    <section class="glossary">
-        <h2>Glossário Técnico</h2>
-        <dl>
-            <dt>WMI (Windows Management Instrumentation)</dt>
-            <dd>Estrutura para administração de dados e operações em ambientes Microsoft Windows.</dd>
+    <article class="featured-article">
+        <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1611186871348-b1ec696e5237?q=80&w=1200');"></div>
+        <div class="article-body">
+            <span class="badge badge-apple">Segurança Apple</span>
+            <h1 class="post-title">Apple Corrige Falha Crítica no WebKit com Atualizações em Segundo Plano</h1>
+            <div class="meta">Publicado por Equipe Técnica Visual Studio & Security | 24 de Março, 2026</div>
             
-            <dt>IDPI / XPIA</dt>
-            <dd>Injeção de instruções maliciosas em modelos de linguagem através de fontes de dados externas para manipular o comportamento da IA.</dd>
-            
-            <dt>C2 (Command and Control)</dt>
-            <dd>Servidor central utilizado por cibercriminosos para comandar máquinas infectadas remotamente.</dd>
-
-            <dt>Exfiltração via SMTP</dt>
-            <dd>Transferência não autorizada de dados para fora de uma rede utilizando o protocolo de e-mail.</dd>
-        </dl>
-    </section>
-
-</div>
-
-<footer>
-    <nav class="nav-links">
-        <a href="index.html">Início</a>
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="sitemap.xml">Sitemap</a>
-    </nav>
-    <p>&copy; 2026 Visual Studio & Security. Todos os direitos reservados.</p>
-</footer>
-
-</body>
-</html>
+            <div class="post-content">
+                <p>A Apple lançou a categoria
