@@ -32,15 +32,15 @@
             overflow-x: hidden;
         }
 
-        /* --- Header com o Olho Metálico --- */
+        /* --- Header Minimalista Otimizado --- */
         header {
             position: relative;
-            height: 500px;
+            height: 400px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 2px solid var(--accent-blue);
+            border-bottom: 1px solid var(--accent-blue);
             background-color: #000;
         }
 
@@ -50,94 +50,87 @@
             left: 50%;
             min-width: 100%;
             min-height: 100%;
-            width: auto;
-            height: auto;
             transform: translate(-50%, -50%);
             z-index: 1;
             object-fit: cover;
-            opacity: 0.5;
-            filter: brightness(0.7) contrast(1.2);
+            opacity: 0.25;
+            filter: brightness(0.4) contrast(1.4);
         }
 
         .header-content {
             position: relative;
             z-index: 2;
-            background: rgba(13, 17, 23, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 20px 35px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid var(--border);
-            max-width: 800px;
+            max-width: 450px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .logo { 
             font-family: 'Poppins', sans-serif; 
-            font-size: 2.5rem; 
+            font-size: 1.8rem; 
             color: var(--header); 
             margin: 0; 
             text-transform: uppercase; 
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .logo span { color: var(--accent-blue); }
 
-        /* --- Grid de Conteúdo --- */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .featured-article { 
-            background: var(--card); 
-            border: 1px solid var(--border); 
-            border-radius: 12px; 
-            overflow: hidden; 
+        /* --- Banner de Status Real --- */
+        .status-bar {
+            background: #0d1117;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+            padding: 10px 20px;
             display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            justify-content: space-around;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #8b949e;
+            overflow-x: auto;
+        }
+        .status-item .label { color: var(--accent-blue); font-weight: bold; }
+        .status-item .val { color: #fff; margin-left: 5px; }
+
+        /* --- Seção de Serviços --- */
+        .services-section { padding: 60px 0; background: #010409; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .service-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+        .service-card h3 { color: var(--header); margin-top: 0; font-size: 1.1rem; }
+        .service-card .price { 
+            display: block; 
+            margin-top: 15px; 
+            color: var(--accent-blue); 
+            font-weight: bold; 
+            font-size: 1.2rem; 
         }
 
-        .featured-article:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-        }
-
-        .article-header-img { width: 100%; height: 200px; background-size: cover; background-position: center; }
-        .article-body { padding: 25px; flex-grow: 1; }
-
-        .badge { 
-            display: inline-block; padding: 4px 10px; border-radius: 6px; 
-            font-size: 0.7rem; font-weight: 700; margin-bottom: 12px; 
-            text-transform: uppercase; background: var(--accent-green); color: white; 
-        }
-        .badge-alert { background: #d73a49; }
-
-        h2.post-title { font-size: 1.4rem; color: var(--header); margin: 0 0 10px 0; }
-        .meta { font-size: 0.75rem; color: #8b949e; margin-bottom: 15px; display: block; }
-
-        /* --- Glossário de Especialista --- */
-        .glossary { 
-            background: #1c2128; padding: 40px; border-radius: 12px; 
-            border: 1px dotted var(--border); margin-top: 60px; 
-        }
-        .glossary h2 { color: var(--accent-blue); font-family: 'JetBrains Mono', monospace; }
-        .glossary dt { font-weight: bold; color: var(--accent-gold); margin-top: 15px; font-family: 'JetBrains Mono', monospace; }
-
-        footer { 
-            text-align: center; padding: 60px 20px; 
-            border-top: 1px solid var(--border); background: var(--code-bg); 
-        }
-        .nav-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        @media (max-width: 768px) {
-            .logo { font-size: 1.8rem; }
-            header { height: 400px; }
-        }
+        /* ... Estilos anteriores de artigos e glossário mantidos ... */
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
+        .featured-article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: 0.3s; }
+        .article-body { padding: 25px; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; margin-bottom: 12px; background: var(--accent-green); color: white; }
+        .badge-alert { background: #d73a49; }
+        
+        footer { text-align: center; padding: 40px; background: #000; border-top: 1px solid var(--border); font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -146,56 +139,25 @@
     <video autoplay loop muted playsinline class="header-video">
         <source src="assets/tech_eye_background.mp4" type="video/mp4">
     </video>
-    
     <div class="header-content">
         <h1 class="logo">Visual Studio <span>& Security</span></h1>
-        <p>Hub de Inteligência em Cibersegurança e Defesa Digital</p>
+        <p style="font-size: 0.85rem; margin-top: 5px; opacity: 0.8;">Hub de Inteligência em Defesa Digital</p>
     </div>
 </header>
 
-<div class="container">
-    <div class="articles-grid">
-        <article class="featured-article">
-            <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600');"></div>
-            <div class="article-body">
-                <span class="badge">Relatório Técnico</span>
-                <h2 class="post-title">Campanha FAUX#ELEVATE</h2>
-                <span class="meta">24 Mar, 2026</span>
-                <p>Análise de exfiltração de dados Chromium via VBScript em ambientes Windows.</p>
-            </div>
-        </article>
-
-        <article class="featured-article">
-            <div class="article-header-img" style="background-image: url('https://images.unsplash.com/photo-21780ecad995?q=80&w=600');"></div>
-            <div class="article-body">
-                <span class="badge badge-alert">Alerta Crítico</span>
-                <h2 class="post-title">Vulnerabilidade XPIA em IAs</h2>
-                <span class="meta">24 Mar, 2026</span>
-                <p>Riscos de injeção indireta de prompt em agentes autônomos OpenClaw.</p>
-            </div>
-        </article>
-    </div>
-
-    <section class="glossary">
-        <h2>_terminologia_técnica</h2>
-        <dl>
-            <dt>WMI (Windows Management Instrumentation)</dt>
-            <dd>Framework explorado para persistência e coleta de dados silenciosa.</dd>
-            
-            <dt>ABE (App-Bound Encryption)</dt>
-            <dd>Camada de proteção que vincula segredos à identidade do executável no Chrome.</dd>
-        </dl>
-    </section>
+<div class="status-bar">
+    <div class="status-item"><span class="label">STATUS:</span><span class="val" style="color: #3fb950;">OPERACIONAL</span></div>
+    <div class="status-item"><span class="label">IP_CLIENTE:</span><span class="val" id="ip-addr">DETECTANDO...</span></div>
+    <div class="status-item"><span class="label">LATENCIA:</span><span class="val" id="ping">0ms</span></div>
+    <div class="status-item"><span class="label">SISTEMA:</span><span class="val">CORE_V3.2</span></div>
 </div>
 
-<footer>
-    <nav class="nav-links">
-        <a href="#">Dashboards</a>
-        <a href="#">Projetos</a>
-        <a href="#">Cybersecurity</a>
-    </nav>
-    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security. Licenciado sob Apache 2.0.</p>
-</footer>
-
-</body>
-</html>
+<div class="container">
+    <section class="services-section">
+        <h2 style="font-family: 'JetBrains Mono'; color: var(--accent-blue);">_serviços_especializados</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Auditoria de Segurança</h3>
+                <p style="font-size: 0.9rem;">Pentest completo e análise de vulnerabilidades em infraestrutura.</p>
+                <span class="price">R$ 1.500,00</span>
+            </div>
