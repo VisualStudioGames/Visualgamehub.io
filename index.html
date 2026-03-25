@@ -1,188 +1,210 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11493047857"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-11493047857');
-    </script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4389870681468404" crossorigin="anonymous"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Studio & Security | Intelligence Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Kovaliosky DeV | Senior Developer & Graphic Designer</title>
+    <meta name="description" content="Portfólio de Guilherme (Kovaliosky DeV), especialista em Desenvolvimento Senior, Design Gráfico e Segurança Cibernética. Explore meu trabalho e experiência.">
+    <meta name="keywords" content="Desenvolvedor Senior, Design Gráfico, Segurança Cibernética, Portfólio, Guilherme Kovaliosky, Desenvolvimento Web, UI/UX, Pentest, AWS, Azure, GCP">
+    <meta name="author" content="Guilherme Kovaliosky DeV">
+    <link rel="canonical" href="https://seusite.com.br">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0c10;
-            --card: #161b22;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --border: #30363d;
-            --critical: #d73a49;
-            --success: #3fb950;
+            --primary: #ffffff;
+            --accent: #00f2ff;
+            --bg-dark: #050505;
+            --card-bg: #0d0d0d;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: var(--bg); 
-            color: var(--text); 
+        body {
+            background-color: var(--bg-dark);
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
-        /* Layout Estrutural */
-        .main-layout {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1600px;
-            margin: 40px auto;
-            padding: 0 20px;
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #00f2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .side-ad { flex: 0 0 160px; display: none; }
-        @media (min-width: 1240px) { .side-ad { display: block; } }
-
-        .content-area { flex: 1; max-width: 900px; }
-
-        /* Componentes de UI */
-        .status-bar {
-            background: #0d1117;
-            padding: 12px 25px;
-            display: flex;
-            justify-content: space-between;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .intel-report {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 30px;
+        .glass-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.03);
+            box-shadow: 0 6px 8px rgba(0, 242, 255, 0.15);
         }
-
-        .badge { background: var(--critical); color: #fff; padding: 4px 8px; font-family: 'JetBrains Mono'; font-size: 0.7rem; border-radius: 4px; }
-        h1.report-title { font-family: 'JetBrains Mono'; font-size: 1.8rem; margin: 20px 0; color: #fff; }
-        
-        .report-content p { margin-bottom: 20px; color: #8b949e; text-align: justify; }
-        .tool-list { margin: 25px 0; padding-left: 20px; border-left: 2px solid var(--accent); }
-        .tool-item { margin-bottom: 15px; font-size: 0.9rem; }
-        .tool-name { color: var(--accent); font-family: 'JetBrains Mono'; font-weight: bold; }
-
-        /* Seção Como se Proteger */
-        .protection-box {
-            margin-top: 40px;
-            padding: 30px;
-            background: rgba(63, 185, 80, 0.05);
-            border: 1px solid var(--success);
-            border-radius: 8px;
+        /* Placeholder for custom scrollbar - requires more detailed CSS */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        .multiplex-container {
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(22, 27, 34, 0.5);
-            border: 1px dashed var(--border);
-            border-radius: 8px;
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
         }
-
-        footer { text-align: center; padding: 60px; border-top: 1px solid var(--border); opacity: 0.5; font-size: 0.8rem; }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00b3b8;
+        }
     </style>
 </head>
-<body>
-
-<div class="status-bar">
-    <div style="display: flex; gap: 20px;">
-        <div><span style="color:var(--accent)">ID:</span> VISUAL_STUDIO_SECURITY</div>
-        <div><span style="color:var(--accent)">STATUS:</span> <span style="color:var(--success)">ONLINE</span></div>
-    </div>
-    <div><span style="color:var(--accent)">IP:</span> <span id="ip-addr">168.228.25.207</span></div>
-</div>
-
-<div class="main-layout">
-    <aside class="side-ad">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4389870681468404"
-             data-ad-slot="9778961944"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-
-    <main class="content-area">
-        <article class="intel-report">
-            <span class="badge">Ameaça Crítica: FAUX#ELEVATE</span>
-            <h1 class="report-title">Relatório de Inteligência: Mineração e Exfiltração de Dados</h1>
-            
-            <div class="report-content">
-                <p><strong>Hackers estão utilizando uma nova abordagem para roubar credenciais empresariais e implementando o Crypto miner (Mecanismo de Mineração de Crypto ativos).</strong></p>
-                
-                <p>A campanha utiliza currículos falsos ofuscados em VBScript para infectar redes corporativas. O vírus aplica uma execução de ferramentas multiuso configurada para extrair dados e minerar crypto ativos da rede Monero.</p>
-
-                <p>O ataque se destaca por abusar de infraestruturas legítimas como DropBox e servidores WordPress comprometidos para controle (C2). A exfiltração utiliza SMTP direto para contas de e-mail russas (.ru).</p>
-
-                <div class="tool-list">
-                    <div class="tool-item"><span class="tool-name">mozilla.vbs:</span> Roubo de credenciais do navegador Firefox.</div>
-                    <div class="tool-item"><span class="tool-name">mservice.exe:</span> Minerador XMRig de alta performance.</div>
-                    <div class="tool-item"><span class="tool-name">WinRing0x64.sys:</span> Driver de kernel para maximizar uso da CPU.</div>
+<body class="antialiased">
+    <!-- Hero Section -->
+    <section class="relative py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        Olá, eu sou <span class="gradient-text">Guilherme Kovaliosky</span>
+                    </h1>
+                    <p class="text-lg mb-6 text-gray-300">
+                        Desenvolvedor Senior, Designer Gráfico e especialista em Segurança Cibernética. Explorando a interseção entre código, design e segurança, oferecendo soluções completas e inovadoras.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        Apaixonado por tecnologia e design, busco constantemente aprimorar minhas habilidades e entregar resultados de alta qualidade.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-accent hover:bg-blue-600 text-bg-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300">
+                            Meus Projetos
+                        </a>
+                        <a href="#contact" class="border border-accent hover:bg-accent hover:text-bg-dark text-accent font-semibold py-2 px-6 rounded-full transition-colors duration-300">
+                            Contato
+                        </a>
+                    </div>
                 </div>
-
-                <p>O malware desativa agressivamente o Microsoft Defender e o UAC via registros do Windows, completando a infecção e exfiltração em aproximadamente 25 segundos.</p>
+                <div>
+                    <img src="https://placehold.co/600x400" alt="Imagem de Perfil" class="rounded-lg shadow-xl glass-card">
+                </div>
             </div>
-
-            <section class="protection-box">
-                <h2 style="font-family: 'JetBrains Mono'; color: var(--success); margin-bottom: 20px; font-size: 1.2rem;">>_ COMO SE PROTEGER</h2>
-                <div style="font-size: 0.9rem; color: #8b949e;">
-                    <p style="margin-bottom: 10px;"><strong style="color:#fff">1. Bloqueio de Scripts:</strong> Desative a execução de arquivos .vbs e .js via GPO.</p>
-                    <p style="margin-bottom: 10px;"><strong style="color:#fff">2. Monitoramento WMI:</strong> Alerte sobre criações de processos incomuns como <em>RuntimeHost.exe</em>.</p>
-                    <p style="margin-bottom: 10px;"><strong style="color:#fff">3. Filtro SMTP:</strong> Bloqueie conexões de saída em portas de e-mail para domínios desconhecidos.</p>
-                </div>
-            </section>
-        </article>
-
-        <div class="multiplex-container">
-            <h3 style="color: var(--accent); font-size: 0.8rem; margin-bottom: 15px; font-family: 'JetBrains Mono';">_conteudo_relacionado</h3>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="autorelaxed"
-                 data-ad-client="ca-pub-4389870681468404"
-                 data-ad-slot="9348417801"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
-    </main>
+    </section>
 
-    <aside class="side-ad">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4389870681468404"
-             data-ad-slot="9778961944"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </aside>
-</div>
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Sobre Mim</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Com mais de 10 anos de experiência no mercado de tecnologia, dedico-me a criar soluções inovadoras e seguras que impulsionam o sucesso dos meus clientes. Minha jornada profissional tem sido marcada por desafios e aprendizados constantes.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Atuo como Desenvolvedor Senior, liderando equipes multidisciplinares e implementando as melhores práticas de desenvolvimento de software. Acredito na colaboração e na comunicação transparente como pilares para o sucesso de qualquer projeto. No Design Gráfico, busco criar identidades visuais marcantes e experiências de usuário agradáveis, que transmitam a essência da marca e engajem o público-alvo.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sou um entusiasta da cultura DevOps e busco sempre automatizar processos para aumentar a eficiência e a qualidade das entregas. Acredito que a integração contínua e a entrega contínua são fundamentais para o sucesso de projetos de software modernos.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        A Segurança Cibernética é uma prioridade em todos os meus projetos, desde a concepção até a implementação. Garanto a integridade e confidencialidade das informações, protegendo os sistemas contra ameaças e vulnerabilidades.
+                    </p>
+                </div>
+                <div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Habilidades</h3>
+                        <p class="text-gray-300 mb-4">
+                            Possuo um conjunto diversificado de habilidades que me permitem atuar em diversas áreas da tecnologia.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300">
+                            <li>Desenvolvimento Full-Stack (React, Node.js, Python): Experiência na criação de aplicações web completas, desde o front-end até o back-end.</li>
+                            <li>Design de Interface e Experiência do Usuário (UI/UX): Criação de interfaces intuitivas e agradáveis, focadas na experiência do usuário.</li>
+                            <li>Segurança Cibernética (Pentest, Análise de Vulnerabilidades): Identificação e correção de vulnerabilidades em sistemas e aplicações.</li>
+                            <li>Gerenciamento de Projetos (Agile, Scrum): Liderança de equipes e gerenciamento de projetos utilizando metodologias ágeis.</li>
+                            <li>Cloud Computing (AWS, Azure, GCP): Experiência na utilização de serviços de cloud computing para escalabilidade e confiabilidade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security.</p>
-</footer>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 md:py-32 bg-card-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Meus Projetos</h2>
+            <p class="text-gray-300 text-center mb-8">
+                Aqui estão alguns dos meus projetos mais recentes. Cada projeto representa um desafio único e uma oportunidade de aplicar meus conhecimentos e habilidades.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-card p-6 rounded-lg">
+                    <img src="https://placehold.co/400x300" alt="Project 1" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 1</h3>
+                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
+                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="glass-card p-6 rounded-lg">
+                    <img src="https://placehold.co/400x300" alt="Project 2" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 2</h3>
+                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
+                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="glass-card p-6 rounded-lg">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nome do Projeto 3</h3>
+                    <p class="text-gray-300">Descrição breve do projeto e tecnologias utilizadas. Detalhes sobre os desafios enfrentados e as soluções implementadas.</p>
+                    <a href="#" class="text-accent hover:text-blue-300 mt-4 inline-block">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-    fetch('https://api.ipify.org?format=json')
-        .then(res => res.json())
-        .then(data => document.getElementById('ip-addr').innerText = data.ip);
-</script>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Contato</h2>
+            <p class="text-gray-300 text-center mb-8">
+                Entre em contato comigo para discutir seus projetos, oportunidades de colaboração ou simplesmente para trocar ideias sobre tecnologia, design e segurança.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sinta-se à vontade para entrar em contato comigo para discutir projetos, oportunidades ou apenas para trocar ideias sobre tecnologia e design. Estou sempre aberto a novas conexões e desafios.
+                    </p>
+                    <ul class="text-gray-300">
+                        <li class="mb-2"><strong class="text-primary">Email:</strong> <a href="mailto:contato@email.com" class="text-accent hover:text-blue-300">contato@email.com</a></li>
+                        <li class="mb-2"><strong class="text-primary">Telefone:</strong> (XX) XXXX-XXXX</li>
+                        <li class="mb-2"><strong class="text-primary">LinkedIn:</strong> <a href="#" class="text-accent hover:text-blue-300">linkedin.com/in/kovalioskydev</a></li>
+                        <li><strong class="text-primary">GitHub:</strong> <a href="#" class="text-accent hover:text-blue-300">github.com/kovalioskydev</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="glass-card p-6 rounded-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-primary text-sm font-semibold mb-2">Nome</label>
+                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Seu nome">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-primary text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Seu email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-primary text-sm font-semibold mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-card-bg border-gray-700 text-primary" placeholder="Sua mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="bg-accent hover:bg-blue-600 text-bg-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-6 text-center text-gray-400">
+        <p>&copy; 2024 Kovaliosky DeV. Todos os direitos reservados. Desenvolvido com paixão e dedicação.</p>
+    </footer>
 
 </body>
 </html>
+```
