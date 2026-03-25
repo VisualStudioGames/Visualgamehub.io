@@ -12,6 +12,7 @@
             --text: #c9d1d9;
             --accent: #58a6ff;
             --border: #30363d;
+            --critical: #d73a49;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -19,21 +20,16 @@
             background: var(--bg); 
             color: var(--text); 
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            line-height: 1.6;
         }
         
-        /* Header ajustado para não empurrar o conteúdo infinitamente */
         header {
             position: relative;
-            height: 50vh; /* Usa 50% da altura da tela do usuário */
+            height: 45vh;
             min-height: 350px;
-            max-height: 500px;
             background: #000;
             border-bottom: 1px solid var(--accent);
             overflow: hidden;
-            flex-shrink: 0;
         }
         .header-video {
             position: absolute;
@@ -52,46 +48,44 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
             border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
             z-index: 10;
         }
         .status-group { display: flex; gap: 20px; }
         .label { color: var(--accent); font-weight: bold; }
         .val { color: #fff; }
 
-        /* Container principal com margem garantida */
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 40px 20px;
-            flex-grow: 1;
-        }
-        h2 { font-family: 'JetBrains Mono'; color: var(--accent); margin-bottom: 25px; font-size: 1.2rem; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
-            margin-bottom: 50px; 
+        .intel-report {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 50px;
         }
-        .card { 
-            background: var(--card); 
-            border: 1px solid var(--border); 
-            padding: 25px; 
-            border-radius: 8px; 
-            transition: 0.3s;
-            height: 100%;
+        .badge {
+            background: var(--critical);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono';
+            text-transform: uppercase;
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .price { color: var(--accent); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 15px; }
+        h1.report-title { 
+            font-family: 'JetBrains Mono'; 
+            font-size: 1.8rem; 
+            margin: 20px 0; 
+            color: #fff;
+        }
+        .report-content p { margin-bottom: 20px; color: #8b949e; text-align: justify; }
+        .tool-list { margin: 25px 0; padding-left: 20px; border-left: 2px solid var(--accent); }
+        .tool-item { margin-bottom: 15px; font-size: 0.9rem; }
+        .tool-name { color: var(--accent); font-family: 'JetBrains Mono'; font-weight: bold; }
 
-        footer { 
-            text-align: center; 
-            padding: 40px 20px; 
-            font-size: 0.8rem; 
-            opacity: 0.5; 
-            border-top: 1px solid var(--border);
-            margin-top: auto;
-        }
+        footer { text-align: center; padding: 60px 20px; font-size: 0.8rem; opacity: 0.5; border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
@@ -109,65 +103,37 @@
     </div>
     <div class="status-group">
         <div><span class="label">IP:</span> <span class="val" id="ip-addr">168.228.25.207</span></div>
-        <div><span class="label">PING:</span> <span class="val" id="ping">7ms</span></div>
+        <div><span class="label">TARGET:</span> <span class="val">DOMÍNIO_EMPRESARIAL</span></div>
     </div>
 </div>
 
 <div class="container">
-    <h2>_serviços_especializados</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Auditoria Cyber</h3>
-            <p style="font-size: 0.9rem; margin-top: 10px; color: #8b949e;">Pentest e análise de vulnerabilidades técnica de alto nível em infraestruturas críticas.</p>
-            <span class="price">R$ 1.500,00</span>
-        </div>
-        <div class="card">
-            <h3>Dev Fullstack</h3>
-            <p style="font-size: 0.9rem; margin-top: 10px; color: #8b949e;">Desenvolvimento de sistemas robustos, APIs seguras e games de alta performance (C#/GDevelop).</p>
-            <span class="price">R$ 800,00</span>
-        </div>
-        <div class="card">
-            <h3>Forense Digital</h3>
-            <p style="font-size: 0.9rem; margin-top: 10px; color: #8b949e;">Recuperação de dados e análise pós-incidente para identificação de vetores de ataque complexos.</p>
-            <span class="price">R$ 1.200,00</span>
-        </div>
-    </div>
+    <article class="intel-report">
+        <span class="badge">Ameaça Crítica: FAUX#ELEVATE</span>
+        <h1 class="report-title">Relatório de Inteligência: Mineração e Exfiltração de Dados</h1>
+        
+        <div class="report-content">
+            <p><strong>Hackers estão utilizando uma nova abordagem para roubar credenciais empresariais e implementando o Crypto miner (Mecanismo de Mineração de Crypto ativos).</strong></p>
+            
+            <p>Há uma campanha rodando com o foco em ambientes corporativos na qual currículos falsos implantados com um mecanismo de mineradores e roubo de informações utilizando VBScript com ofuscação disfarçados de Doc de currículos/Cv, os cibercriminosos utilizam E-mails de Phishing, quando ativo, o vírus/malware aplica uma execução de ferramentas multiuso configurada para extrair dados e minerar crypto ativos da rede Monero.</p>
 
-    <h2>_inteligência_recente</h2>
-    <div class="grid">
-        <div class="card">
-            <span style="background: var(--accent); color: #000; font-size: 0.65rem; padding: 2px 6px; font-weight: bold; border-radius: 3px;">REPORT #001</span>
-            <h3 style="margin-top: 10px;">Campanha FAUX#ELEVATE</h3>
-            <p style="font-size: 0.85rem; margin-top: 5px; color: #8b949e;">Análise técnica sobre a exfiltração de credenciais Chromium via scripts VBScript ofuscados.</p>
-        </div>
-        <div class="card">
-            <span style="background: #d73a49; color: #fff; font-size: 0.65rem; padding: 2px 6px; font-weight: bold; border-radius: 3px;">CRITICAL #002</span>
-            <h3 style="margin-top: 10px;">Vulnerabilidade XPIA</h3>
-            <p style="font-size: 0.85rem; margin-top: 5px; color: #8b949e;">Risco de Injeção Indireta de Prompt em agentes autônomos. Sequestro de fluxo lógico de LLMs.</p>
-        </div>
-        <div class="card">
-            <span style="background: #e3b341; color: #000; font-size: 0.65rem; padding: 2px 6px; font-weight: bold; border-radius: 3px;">FORENSIC #003</span>
-            <h3 style="margin-top: 10px;">Persistência via WMI</h3>
-            <p style="font-size: 0.85rem; margin-top: 5px; color: #8b949e;">Estudo sobre o uso de filtros de eventos WMI para execução de código persistente sem arquivos.</p>
-        </div>
-    </div>
-</div>
+            <p>O mecanismo se tornou popularmente chamado de Faux#Elevate pelas instituições de defesa cibernéticas, a campanha se destaca por seus abusos de serviços e infraestruturas de legítimos, utilizando DropBox para o armazenamento de payloads, sites como Wordpress marrocos para hospedarem configurações de controle (C2) E E-MAIL. Também utilizam ru SMTP para exfiltração das credenciais dos navegadores alvos e arquivos de Desktop, exemplo esse que nos leva a enxergar como os ataques podem enganar os mecanismos de segurança sem chamarem muito atenção.</p>
 
-<footer>
-    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security. Built for Performance.</p>
-</footer>
+            <p>Os invasores utilizam um sistema de Visual Basic Script que consiste em enviar e exibir uma mensagem de erro, na qual os destinatários acham que o arquivo corrompeu, porém, não imaginam que a mensagem é só um "Bait", uma forma de "isca" para o script com 224 mil linhas, na qual somente 226 linhas contêm o código real, executando várias verificações, evitando sandboxes e entrando em looping de controle persistente da conta do destinatário/Usuário. O malware também tem um mecanismo de porta de união de domínio, utilizando Windows Management Instrumentation, visando apenas os sistemas empresariais. Assim que o atacante entra na máquina da empresa, desativa os controles de segurança para camuflar seus rastros, configurando e excluindo o Microsoft Defender, desativando o UAC por meio de alterações no registros do Windows e se auto-excluindo.</p>
 
-<script>
-    fetch('https://api.ipify.org?format=json')
-        .then(res => res.json())
-        .then(data => document.getElementById('ip-addr').innerText = data.ip)
-        .catch(() => document.getElementById('ip-addr').innerText = "PROTECTED");
+            <p>Entre as ferramentas usadas para facilitar o roubo de credenciais está um componente que utiliza o projeto ChromElevator para extrair dados sensíveis de navegadores baseados em Chromium, contornando as proteções contra criptografia vinculada a aplicativos (ABE). Algumas das outras ferramentas incluem:</p>
 
-    const start = Date.now();
-    fetch(window.location.href).then(() => {
-        document.getElementById('ping').innerText = (Date.now() - start) + "ms";
-    });
-</script>
+            <div class="tool-list">
+                <div class="tool-item"><span class="tool-name">mozilla.vbs:</span> um malware VBScript para roubo do perfil e credenciais do Mozilla Firefox</div>
+                <div class="tool-item"><span class="tool-name">walls.vbs:</span> um payload VBScript para exfiltração de arquivos em desktop</div>
+                <div class="tool-item"><span class="tool-name">mservice.exe:</span> um minerador de criptomoedas XMRig lançado após recuperar a configuração de mineração de um site marroquino do WordPress comprometido</div>
+                <div class="tool-item"><span class="tool-name">WinRing0x64.sys:</span> um driver legítimo do kernel do Windows usado para desbloquear todo o potencial de mineração da CPU</div>
+                <div class="tool-item"><span class="tool-name">RuntimeHost.exe:</span> um componente de Trojan persistente que modifica as regras do Firewall do Windows e se comunica periodicamente com um servidor C2</div>
+            </div>
 
-</body>
-</html>
+            <p>Os dados exclusivos do navegador são exfiltrados usando dois e-mails separados de contas remetentes ru ("olga.aitsaid@mail.ru" e "3pw5nd9neeyn@mail.ru") que compartilham a mesma senha via SMTP para outro endereço de e-mail operado pelo ator ameaçador ("vladimirprolitovitch@duck.com").</p>
+
+            <p>Uma vez concluídas as atividades de roubo e exfiltração de credenciais, a cadeia de ataque inicia uma limpeza agressiva de todas as ferramentas caídas na tentativa de minimizar a pegada forense, deixando apenas o minerador e o troiano.</p>
+
+            <p style="border-top: 1px solid var(--border); padding-top: 20px; font-style: italic;">
+                "A campanha FAUX#ELEVATE demonstra uma operação de ataque bem organizada e em múltiplas etapas que combina várias técnicas notáveis em uma única cadeia de infecção", disse Securonix. "O que torna esta campanha particularmente perigosa é a velocidade de execução: a cadeia completa ocorre em aproximadamente 2
