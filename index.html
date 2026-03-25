@@ -8,6 +8,7 @@
       gtag('js', new Date());
       gtag('config', 'AW-11493047857');
     </script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4389870681468404" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
@@ -23,6 +24,7 @@
             --accent: #58a6ff;
             --border: #30363d;
             --critical: #d73a49;
+            --success: #3fb950;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -30,13 +32,15 @@
             background: var(--bg); 
             color: var(--text); 
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Layout Estrutural */
         .main-layout {
             display: flex;
             justify-content: center;
             gap: 20px;
-            max-width: 1500px;
+            max-width: 1600px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -45,6 +49,20 @@
         @media (min-width: 1240px) { .side-ad { display: block; } }
 
         .content-area { flex: 1; max-width: 900px; }
+
+        /* Componentes de UI */
+        .status-bar {
+            background: #0d1117;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
         .intel-report {
             background: var(--card);
@@ -56,10 +74,20 @@
 
         .badge { background: var(--critical); color: #fff; padding: 4px 8px; font-family: 'JetBrains Mono'; font-size: 0.7rem; border-radius: 4px; }
         h1.report-title { font-family: 'JetBrains Mono'; font-size: 1.8rem; margin: 20px 0; color: #fff; }
+        
         .report-content p { margin-bottom: 20px; color: #8b949e; text-align: justify; }
         .tool-list { margin: 25px 0; padding-left: 20px; border-left: 2px solid var(--accent); }
         .tool-item { margin-bottom: 15px; font-size: 0.9rem; }
         .tool-name { color: var(--accent); font-family: 'JetBrains Mono'; font-weight: bold; }
+
+        /* Seção Como se Proteger */
+        .protection-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(63, 185, 80, 0.05);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+        }
 
         .multiplex-container {
             margin-top: 40px;
@@ -73,6 +101,14 @@
     </style>
 </head>
 <body>
+
+<div class="status-bar">
+    <div style="display: flex; gap: 20px;">
+        <div><span style="color:var(--accent)">ID:</span> VISUAL_STUDIO_SECURITY</div>
+        <div><span style="color:var(--accent)">STATUS:</span> <span style="color:var(--success)">ONLINE</span></div>
+    </div>
+    <div><span style="color:var(--accent)">IP:</span> <span id="ip-addr">168.228.25.207</span></div>
+</div>
 
 <div class="main-layout">
     <aside class="side-ad">
@@ -93,24 +129,27 @@
             <div class="report-content">
                 <p><strong>Hackers estão utilizando uma nova abordagem para roubar credenciais empresariais e implementando o Crypto miner (Mecanismo de Mineração de Crypto ativos).</strong></p>
                 
-                <p>Há uma campanha rodando com o foco em ambientes corporativos na qual currículos falsos implantados com um mecanismo de mineradores e roubo de informações utilizando VBScript com ofuscação disfarçados de Doc de currículos/Cv. Os cibercriminosos utilizam E-mails de Phishing; quando ativo, o malware aplica uma execução de ferramentas multiuso configurada para extrair dados e minerar crypto ativos da rede Monero.</p>
+                <p>A campanha utiliza currículos falsos ofuscados em VBScript para infectar redes corporativas. O vírus aplica uma execução de ferramentas multiuso configurada para extrair dados e minerar crypto ativos da rede Monero.</p>
 
-                <p>O mecanismo se tornou popularmente chamado de <strong>Faux#Elevate</strong>. A campanha se destaca por seus abusos de infraestruturas legítimas, utilizando DropBox para payloads e sites WordPress comprometidos para controle (C2). Também utilizam SMTP .ru para exfiltração de credenciais de navegadores e arquivos de Desktop.</p>
-
-                <p>Os invasores utilizam um sistema de Visual Basic Script que exibe uma mensagem de erro falsa (isca), enquanto um script de 224 mil linhas executa verificações para evitar sandboxes. O malware utiliza <em>Windows Management Instrumentation (WMI)</em> para persistência em sistemas empresariais, desativando o Microsoft Defender e o UAC via registro do Windows.</p>
+                <p>O ataque se destaca por abusar de infraestruturas legítimas como DropBox e servidores WordPress comprometidos para controle (C2). A exfiltração utiliza SMTP direto para contas de e-mail russas (.ru).</p>
 
                 <div class="tool-list">
-                    <div class="tool-item"><span class="tool-name">mozilla.vbs:</span> Roubo de perfil e credenciais do Firefox.</div>
-                    <div class="tool-item"><span class="tool-name">walls.vbs:</span> Exfiltração de arquivos do desktop.</div>
-                    <div class="tool-item"><span class="tool-name">mservice.exe:</span> Minerador XMRig via site WordPress comprometido.</div>
-                    <div class="tool-item"><span class="tool-name">WinRing0x64.sys:</span> Driver de kernel para desbloquear potencial da CPU.</div>
-                    <div class="tool-item"><span class="tool-name">RuntimeHost.exe:</span> Trojan persistente que modifica o Firewall.</div>
+                    <div class="tool-item"><span class="tool-name">mozilla.vbs:</span> Roubo de credenciais do navegador Firefox.</div>
+                    <div class="tool-item"><span class="tool-name">mservice.exe:</span> Minerador XMRig de alta performance.</div>
+                    <div class="tool-item"><span class="tool-name">WinRing0x64.sys:</span> Driver de kernel para maximizar uso da CPU.</div>
                 </div>
 
-                <p style="border-top: 1px solid var(--border); padding-top: 20px; font-style: italic; color: #8b949e;">
-                    "O que torna esta campanha particularmente perigosa é a velocidade de execução: a cadeia completa ocorre em aproximadamente 25 segundos." - Securonix.
-                </p>
+                <p>O malware desativa agressivamente o Microsoft Defender e o UAC via registros do Windows, completando a infecção e exfiltração em aproximadamente 25 segundos.</p>
             </div>
+
+            <section class="protection-box">
+                <h2 style="font-family: 'JetBrains Mono'; color: var(--success); margin-bottom: 20px; font-size: 1.2rem;">>_ COMO SE PROTEGER</h2>
+                <div style="font-size: 0.9rem; color: #8b949e;">
+                    <p style="margin-bottom: 10px;"><strong style="color:#fff">1. Bloqueio de Scripts:</strong> Desative a execução de arquivos .vbs e .js via GPO.</p>
+                    <p style="margin-bottom: 10px;"><strong style="color:#fff">2. Monitoramento WMI:</strong> Alerte sobre criações de processos incomuns como <em>RuntimeHost.exe</em>.</p>
+                    <p style="margin-bottom: 10px;"><strong style="color:#fff">3. Filtro SMTP:</strong> Bloqueie conexões de saída em portas de e-mail para domínios desconhecidos.</p>
+                </div>
+            </section>
         </article>
 
         <div class="multiplex-container">
@@ -136,8 +175,14 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security. Built for Performance.</p>
+    <p>&copy; 2026 Kovaliosky DeV | Visual Studio & Security.</p>
 </footer>
+
+<script>
+    fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => document.getElementById('ip-addr').innerText = data.ip);
+</script>
 
 </body>
 </html>
