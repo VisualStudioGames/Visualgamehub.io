@@ -108,7 +108,6 @@
  </head>
  <body class="antialiased h-full">
   <div id="app-wrapper" class="w-full h-full overflow-auto">
-   <!-- Hero Section -->
    <section class="relative py-20 md:py-32">
     <div class="max-w-5xl mx-auto px-6">
      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -127,12 +126,12 @@
       </div>
      </div>
     </div>
-   </section><!-- Skills Section -->
+   </section>
+
    <section class="py-16" id="skills">
     <div class="max-w-5xl mx-auto px-6">
      <h2 class="section-title animate-in"><span class="gradient-text">Habilidades</span></h2>
      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Dev -->
       <div class="glass-card rounded-xl p-6 animate-in delay-1">
        <div class="flex items-center gap-3 mb-4">
         <i data-lucide="code-2" class="w-6 h-6" style="color: var(--accent)"></i>
@@ -141,7 +140,7 @@
        <div class="flex flex-wrap gap-2">
         <span class="skill-tag">JavaScript</span> <span class="skill-tag">TypeScript</span> <span class="skill-tag">React</span> <span class="skill-tag">Node.js</span> <span class="skill-tag">Python</span> <span class="skill-tag">AWS</span> <span class="skill-tag">Azure</span> <span class="skill-tag">GCP</span>
        </div>
-      </div><!-- Design -->
+      </div>
       <div class="glass-card rounded-xl p-6 animate-in delay-2">
        <div class="flex items-center gap-3 mb-4">
         <i data-lucide="palette" class="w-6 h-6" style="color: var(--accent)"></i>
@@ -150,7 +149,7 @@
        <div class="flex flex-wrap gap-2">
         <span class="skill-tag">UI/UX</span> <span class="skill-tag">Figma</span> <span class="skill-tag">Photoshop</span> <span class="skill-tag">Illustrator</span> <span class="skill-tag">Branding</span> <span class="skill-tag">Motion</span>
        </div>
-      </div><!-- Security -->
+      </div>
       <div class="glass-card rounded-xl p-6 animate-in delay-3">
        <div class="flex items-center gap-3 mb-4">
         <i data-lucide="shield" class="w-6 h-6" style="color: var(--accent)"></i>
@@ -162,7 +161,8 @@
       </div>
      </div>
     </div>
-   </section><!-- Projects Section -->
+   </section>
+
    <section class="py-16" id="projects">
     <div class="max-w-5xl mx-auto px-6">
      <h2 class="section-title animate-in"><span class="gradient-text">Projetos</span></h2>
@@ -209,12 +209,14 @@
       </div>
      </div>
     </div>
-   </section><!-- Contact Section -->
+   </section>
+
    <section class="py-16" id="contact">
-    <div class="max-w-3xl mx-auto px-6 text-center">
+    <div class="max-w-5xl mx-auto px-6 text-center">
      <h2 class="section-title animate-in"><span class="gradient-text">Contato</span></h2>
      <p class="text-gray-300 mb-8 animate-in delay-1">Interessado em trabalhar juntos? Entre em contato e vamos criar algo incrível.</p>
-     <div class="flex flex-wrap justify-center gap-6 animate-in delay-2">
+     
+     <div class="flex flex-wrap justify-center gap-6 animate-in delay-2 mb-12">
       <div class="glass-card rounded-xl px-6 py-4 flex items-center gap-3">
        <i data-lucide="mail" class="w-5 h-5" style="color: var(--accent)"></i> <span class="text-gray-300 text-sm">visualstudioandsecurityoficial@gmail.com</span>
       </div>
@@ -223,19 +225,27 @@
       </div>
       <div class="glass-card rounded-xl px-6 py-4 flex items-center gap-3">
        <i data-lucide="linkedin" class="w-5 h-5" style="color: var(--accent)"></i> <span class="text-gray-300 text-sm">LinkedIn</span>
-      </div>veja mais sites produzidos pela empresa 
-            https://visualstudioandsecurity.github.io/automatiza-o/
-            file:///C:/Users/Pichau/visual-studio-security/siteestilomercadolivre.html
-            file:///C:/Users/Pichau/visual-studio-security/Portf%C3%B3liodeamostra/index.html
+      </div>
+     </div>
+
+     <div class="animate-in delay-3">
+        <h3 class="text-xl font-bold mb-6 gradient-text">Veja mais sites produzidos pela empresa</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="https://visualstudioandsecurity.github.io/automatiza-o/" target="_blank" class="glass-card rounded-xl p-4 text-sm text-accent hover:underline">Automação - GitHub</a>
+            <a href="file:///C:/Users/Pichau/visual-studio-security/siteestilomercadolivre.html" class="glass-card rounded-xl p-4 text-sm text-gray-400">Estilo Mercado Livre (Local)</a>
+            <a href="file:///C:/Users/Pichau/visual-studio-security/Portf%C3%B3liodeamostra/index.html" class="glass-card rounded-xl p-4 text-sm text-gray-400">Portfólio Amostra (Local)</a>
+        </div>
      </div>
     </div>
-  </section><!-- Footer -->
+   </section>
+
    <footer class="py-8 border-t border-white/5">
     <div class="max-w-5xl mx-auto px-6 text-center">
      <p class="text-gray-500 text-sm">© 2026 Kovaliosky DeV. Todos os direitos reservados.</p>
     </div>
    </footer>
   </div>
+
   <script>
         const defaultConfig = {
             hero_title: 'Guilherme Kovaliosky',
@@ -322,6 +332,44 @@
         });
 
         lucide.createIcons();
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e22a2c423f5628b',t:'MTc3NDQ5MTIwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </script>
+
+  <script>
+    function applyBan() {
+        localStorage.setItem('visual_studio_ban', 'true');
+        document.body.innerHTML = `
+            <div style="background:#000; color:#0f0; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family: 'Courier New', monospace; text-align:center; padding:20px; position:fixed; top:0; left:0; width:100%; z-index:9999;">
+                <h1 style="font-size:3rem; text-shadow: 0 0 10px #f00; color:#f00; margin-bottom:20px;">⚠️ ACESSO BLOQUEADO ⚠️</h1>
+                <p style="font-size:1.5rem; margin-bottom:10px;">Tentativa de inspeção detectada pelo sistema de segurança Visual Studio.</p>
+                <p>Seu dispositivo foi identificado e o acesso a este portfólio foi revogado permanentemente.</p>
+                <div style="margin-top:30px; border:1px solid #0f0; padding:15px; animation: blink 1s infinite;">
+                    STATUS: BLACKLISTED | PROTOCOLO: 0x88234
+                </div>
+            </div>
+            <style> @keyframes blink { 50% { opacity: 0; } } body { overflow: hidden !important; } </style>
+        `;
+    }
+
+    if (localStorage.getItem('visual_studio_ban') === 'true') {
+        applyBan();
+    }
+
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
+            applyBan();
+            return false;
+        }
+    };
+
+    setInterval(() => {
+        const threshold = 160;
+        if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+            applyBan();
+        }
+    }, 1000);
+  </script>
+
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e22a2c423f5628b',t:'MTc3NDQ5MTIwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ </body>
 </html>
